@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Blig Admin side</title>
+  <%= stylesheet_link_tag    'admin/application', media: 'all', 'data-turbolinks-track' => true %>
+    <link href='https://fonts.googleapis.com/css?family=Gravitas+One' rel='stylesheet' type='text/css'>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+      <%= csrf_meta_tags %>
+</head>
+
+<body>
+  <div class="navigation-container">
+    <div class="top-navigation">
+      <ul class="navigation navigation-bar">
+        <li class="active"><a href="/">Home</a></li>
+      </ul>
+      <ul class="navigation navigation-bar pull-right">
+        <li class="active"><a href="https://github.com/troyleach">github |</a></li>
+        <li><a href="#">facebook |</a></li>
+        <li><a href="#">linkin</a></li>
+      </ul>
+    </div>
+  </div>
+  <!-- End of navigation-container -->
+
+  <div class="blog-header">
+    <div class="row">
+      <div class="col-md-12 <%= @css_sytle %>">
+        <%= @page_title %>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="content">
+      <div class="row">
+        <div class="col-md-12">
+          <%= yield %>
+        </div>
+        <!-- End of col-md-12 below section -->
+      </div>
+      <!-- End of row below section -->
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer">
+        <small>This is the footer | <a href="admin/login.html">Admin Login</a></small>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript
+            ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="/app/assets/javascripts/bootstrap.min.js"></script>
+
+</body>
+
+</html>

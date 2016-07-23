@@ -1,0 +1,19 @@
+@import "admin/partials/globals";
+@import "admin/styles/top_navigation";
+
+body {
+    background-color: $primary-color;
+    font-family: $font-family-test;
+    font-size: 1.8em;
+    line-height: 1.5em;
+}
+
+/* blog header */
+.blog-header {
+    font-family: $font-family;
+    width: 100%;
+    background-color: $secondary-color;
+    height: 100px;
+    margin: 0px auto;
+    text-align: center;
+}

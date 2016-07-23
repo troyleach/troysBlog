@@ -1,0 +1,34 @@
+@import "partials/globals";
+@import "styles/top_navigation";
+@import "styles/index";
+@import "styles/tabs";
+
+body {
+    background-color: $primary-color;
+    font-family: $font-family-test;
+    font-size: 1.8em;
+    line-height: 1.5em;
+}
+
+img {
+    width: 100%;
+}
+
+h1 {
+    color: $font-color-main-titles;
+    font-family: $font-family-h1;
+}
+
+h2, h3, h4 {
+    color: $font-color-sub-titles;
+    font-family: $font-family-h234;
+    font-weight: 900;
+}
+
+small {
+    font-size: 65% !important;
+}
+
+
+
+

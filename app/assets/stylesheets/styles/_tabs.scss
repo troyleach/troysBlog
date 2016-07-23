@@ -1,0 +1,43 @@
+#tabs {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.nav-tabs-modified {
+    font-size: 60% !important;
+}
+
+.tab-content-modified {
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    height: 200px;
+}
+
+.quote-image {
+  width: 100%;
+}
+
+.polaroid {
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: auto;
+}
+
+.quote-container {
+    padding-top: 20px;
+}
+    
+.sports-container {
+    padding-top: 20px;
+    text-align: center
+}
+
+.sport-image {
+    width: 150px;
+}
+
+.weather-container {
+    padding-top: 20px;
+    text-align: center
+}

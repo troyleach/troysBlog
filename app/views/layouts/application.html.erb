@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TroysBlog</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <link href='https://fonts.googleapis.com/css?family=Gravitas+One' rel='stylesheet' type='text/css'>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+    <div class="navigation-container">
+        <div class="top-navigation">
+            <ul class="navigation navigation-bar">
+                <li class="active"><a href="/">Home |</a></li>
+                <li><a href="about.html">About |</a></li>
+                <li><a href="contact.html">Contact |</a></li>
+                <li><a href="http://www.troyleach.com" target="_blank">troyleach.com</a></li>
+            </ul> 
+            <ul class="navigation navigation-bar pull-right">
+                <li class="active"><a href="https://github.com/troyleach">github |</a></li>
+                <li><a href="#">facebook |</a></li>
+                <li><a href="#">linkin</a></li>
+            </ul> 
+        </div>
+    </div><!-- End of navigation-container -->
+
+    <div class="blog-header">
+        <div class="row">
+            <div class="col-md-2">
+                a pictrue will go here
+            </div>
+            <div class="col-md-8 <%= @css_sytle %>">
+                <%= @page_title %>
+            </div>
+            <div class="col-md-2">
+                maybe a picture here too
+            </div>
+        </div>
+    </div>
+
+    <div class="sub-header">
+        <div class="col-md-12">
+            <form class="search-form navbar-form navbar-right" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+    <section>
+        <div class="content row">
+            <div class="col-md-12">
+                    <%= yield %>
+            </div><!-- End of col-md-12 below section -->
+        </div><!-- End of row below section -->
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer">
+                <small>This is the footer | <a href="admin/login.html">Admin Login</a></small>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+            ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="/app/assets/javascripts/bootstrap.min.js"></script>
+
+</body>
+</html>

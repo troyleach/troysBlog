@@ -1,0 +1,43 @@
+.category-links {
+    font-size: 65%;
+    line-height: 1.5em;
+}
+
+.category-links a {
+    display: block;
+}
+
+.far-right-column {
+    margin-bottom: 15px;
+}
+
+.second-column {
+    border-left: 1px solid $light-grey;
+}
+
+.main-blog {
+    border-left: 1px solid $light-grey;
+    border-right: 1px solid $light-grey;
+}
+
+.main-page-title {
+    font-size: 200%;
+    margin: auto;
+}
+
+hr.style1 {
+	background-color: #fff;
+	border-top: 1px dashed #8c8b8b;
+}
+
+.main-blog-title {
+    font-family: $font-family-main-title;
+    font-size: 250%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.portrait {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}

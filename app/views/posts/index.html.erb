@@ -1,0 +1,106 @@
+<!-- Start of first  columne -->
+<div class="design-border col-md-1">
+    <div class="row">
+        <div class="col-md-12">
+            <%= image_tag 'me.jpg', :class => 'portrait' %>
+        </div>
+        <div class="category-links col-md-12">
+            <a href="#">Ruby</a>
+            <a href="#">R on R</a>
+            <a href="#">JavaScript</a>
+            <a href="#">AngularJS</a>
+            <a href="#">Eating Out</a>
+        </div>
+    </div>
+</div>
+<!-- Start of second  columne -->
+<div class="second-column col-md-2">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="post">
+                <h4>This is the title of the first post</h4>
+                <small>by: Troy Leach</small>
+                <p>
+                    is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. <a href="#">More...</a>
+                </p>
+                <small>Date: March 1, 2016</small>
+                <hr class="style1" />
+            </div>
+            <div class="post">
+                <h4>This is the title of the second post</h4>
+                <small>by: Troy Leach</small>
+                <p>
+                    is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. <a href="#">More...</a>
+                </p>
+                <small class="small">Date: March 1, 2016</small>
+                <hr class="style1" />
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Start of middle column -->
+<div class="main-blog col-md-5">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="main-blog-title">
+                <span>Ruby on Rails</span>
+            </div>
+            <div class="post">
+            <%= image_tag 'main-image.jpg', :class => 'main-blog-image' %>
+                <small class="pull-right">Credit for the pictrue</small>
+                <h4>This is the title of the main post</h4>
+                <p>
+                    is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. <a href="#">More...</a>
+                </p>
+                <small>by: Troy Leach</small>
+                <small>Date: June 18, 2016</small>
+                <hr class="style1" />
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="post">
+                <h4>This is the title of the first post under main post</h4>
+                <small>by: Troy Leach</small>
+                <p>
+                    is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. <a href="#">More...</a>
+                </p>
+                <small>Date: July 3, 2015</small>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="post">
+                <h4>This is the title of the second post under main post</h4>
+                <small>by: Troy Leach</small>
+                <p>
+                    is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. <a href="#">More...</a>
+                </p>
+                <small>Date: July 3, 2015</small>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Start of far right column -->
+<div class="design-border col-md-4">
+    <div class="row">
+        <div class="col-md-12">
+            <div id="tabs">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs nav-tabs-modified" role="tablist">
+                    <li role="presentation" class="active"><a href="#quote" aria-controls="quote" role="tab" data-toggle="tab">Quote</a></li>
+                    <li role="presentation"><a href="#sports" aria-controls="sports" role="tab" data-toggle="tab">Sports</a></li>
+                    <li role="presentation"><a href="#weather" aria-controls="weather" role="tab" data-toggle="tab">Weather</a></li>
+                </ul>
+
+                <!-- Tab panes -->
+                <div class="tab-content tab-content-modified">
+                    <div role="tabpanel" class="tab-pane active" id="quote"><%= render 'quotes' %></div>
+                    <div role="tabpanel" class="tab-pane" id="sports"><%= render 'sports' %></div>
+                    <div role="tabpanel" class="tab-pane" id="weather"><%= render 'weather' %></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <%= image_tag 'cartoon.png', :class => 'cartoon-image', :alt => 'Image of cartoon' %>
+        </div>
+    </div>
+</div>
