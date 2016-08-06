@@ -3,9 +3,9 @@
 
 <head>
   <title>Blog Admin side</title>
-  <%= stylesheet_link_tag    'admin/application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'admin/application', media: 'all', 'data-turbolinks-track' => true %>
     <link href='https://fonts.googleapis.com/css?family=Gravitas+One' rel='stylesheet' type='text/css'>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'admin/application', 'data-turbolinks-track' => true %>
       <%= csrf_meta_tags %>
 </head>
 
@@ -64,15 +64,12 @@
   <footer>
     <div class="footer-container">
       <div class="footer">
-        <small>This is the footer | <a href="admin/login.html">Admin Login</a></small>
+        <small>This is the footer | <%= link_to "Front End", root_path %>
+</small>
       </div>
     </div>
   </footer>
 
-  <!-- Bootstrap core JavaScript
-            ================================================== -->
-  <!-- Placed at the end of the document so the pages load faster -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script>
     $(document).ready(function() {
       setTimeout(function() {

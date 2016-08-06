@@ -31,6 +31,13 @@ gem "bcrypt", :require => "bcrypt"
 
 gem 'will_paginate', '~> 3.1.0'
 
+# Editor that is super cool
+gem "wysiwyg-rails"
+gem "font-awesome-rails"
+
+# To upload files
+gem "paperclip", "~> 5.0.0"
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
