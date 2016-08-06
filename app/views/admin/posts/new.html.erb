@@ -1,2 +1,46 @@
-<h1>Admin::Posts#new</h1>
-<p>Find me in app/views/admin/posts/new.html.erb</p>
+<h2><%= @page_title %></h2>
+
+<%= form_for [:admin, @post] do |form| %>
+    <!-- check for erros -->
+  <% if @post.errors.any? %>
+      <% @post.errors.full_messages.each do |msg| %>
+          <div class="alert alert-danger">
+              <%= msg %>
+          </div>
+      <% end %>
+  <% end %>
+
+  <div class="form-group">
+      <%= form.label :title %>
+      <%= form.text_field :title, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+      <%= form.label :category %>
+      <%= form.select :category_id, Category.all.collect { |category| [category.name, category.id] }, { :include_blank => 'Select One' }, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+      <%= form.label :author %>
+      <%= form.select :user_id, User.all.collect { |user| [user.name, user.id] }, { :include_blank => 'Select One' }, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+      <%= form.label :image %>
+      <%= form.file_field :image, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+      <%= form.label :tags %>
+      <%= form.text_field :tags, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+      <%= form.label :body %>
+      <%= form.text_area :body, class: 'form-control' %>
+  </div>
+
+  <br/>
+  <%= form.submit "Submit", class: 'btn btn-primary' %>
+  <%= link_to "Cancel", admin_posts_path, class: 'btn btn-default' %>
+<% end %>

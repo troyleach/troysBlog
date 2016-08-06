@@ -5,5 +5,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    @page_title = 'Ruby ON the Rails'
+    @css_sytle = 'main-blog-title'
   end
 end

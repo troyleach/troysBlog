@@ -2,25 +2,16 @@
 <html>
 <head>
   <title>TroysBlog</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <link href='https://fonts.googleapis.com/css?family=Gravitas+One' rel='stylesheet' type='text/css'>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <script src="bootstrap.min.js"></script>
 </head>
 <body>
     <div class="navigation-container">
         <div class="top-navigation">
-            <ul class="navigation navigation-bar">
-                <li class="active"><a href="/">Home |</a></li>
-                <li><a href="about.html">About |</a></li>
-                <li><a href="contact.html">Contact |</a></li>
-                <li><a href="http://www.troyleach.com" target="_blank">troyleach.com</a></li>
-            </ul> 
-            <ul class="navigation navigation-bar pull-right">
-                <li class="active"><a href="https://github.com/troyleach">github |</a></li>
-                <li><a href="#">facebook |</a></li>
-                <li><a href="#">linkin</a></li>
-            </ul> 
+          <%= render 'layouts/top_navigation' %>
         </div>
     </div><!-- End of navigation-container -->
 
@@ -68,7 +59,12 @@
             ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="/app/assets/javascripts/bootstrap.min.js"></script>
-
+  <script>
+   $(document).ready(function(){
+     setTimeout(function(){
+       $('#flash').remove();
+     }, 5000);
+   })
+  </script>
 </body>
 </html>

@@ -17,3 +17,15 @@ body {
     margin: 0px auto;
     text-align: center;
 }
+
+/* a:active { */
+/*     color: green !important; */
+/* } */
+
+/* .active { */
+/*     color: red !important; */
+/* } */
+
+a:link { color:black }
+a:hover { color:blue }
+a:active { color:red }
