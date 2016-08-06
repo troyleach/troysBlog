@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Blig Admin side</title>
+  <title>Blog Admin side</title>
   <%= stylesheet_link_tag    'admin/application', media: 'all', 'data-turbolinks-track' => true %>
     <link href='https://fonts.googleapis.com/css?family=Gravitas+One' rel='stylesheet' type='text/css'>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -13,10 +13,18 @@
   <div class="navigation-container">
     <div class="top-navigation">
       <ul class="navigation navigation-bar">
-        <li><%= link_to "Home |", root_path %></li>
-        <li class="<%= params[:controller] == 'admin/posts' ? 'active' : '' %>"><%= link_to "Posts |", admin_posts_path %></li>
-        <li class="<%= params[:controller] == 'admin/categories' ? 'active' : '' %>"> <%= link_to "Categories |", admin_categories_path %></li>
-        <li class="<%= params[:controller] == 'admin/users' ? 'active' : '' %>"><%= link_to "Users", admin_users_path %></li>
+        <li>
+          <%= link_to "Home |", root_path %>
+        </li>
+        <li class="<%= params[:controller] == 'admin/posts' ? 'active' : '' %>">
+          <%= link_to "Posts |", admin_posts_path %>
+        </li>
+        <li class="<%= params[:controller] == 'admin/categories' ? 'active' : '' %>">
+          <%= link_to "Categories |", admin_categories_path %>
+        </li>
+        <li class="<%= params[:controller] == 'admin/users' ? 'active' : '' %>">
+          <%= link_to "Users", admin_users_path %>
+        </li>
       </ul>
       <ul class="navigation navigation-bar pull-right">
         <li class="active"><a href="https://github.com/troyleach">github |</a></li>
@@ -26,28 +34,26 @@
     </div>
   </div>
   <!-- End of navigation-container -->
-
-  <div class="blog-header">
-    <div class="row">
-      <div class="col-md-12 <%= @css_sytle %>">
-        <%= @page_title %>
-      </div>
+  <div class="search-bar">
+    <div class="col-md-12">
+      <%= render 'partials/admin/search' %>
     </div>
   </div>
-
   <section>
-     <div class="content">
+    <div class="content">
       <div class="row">
         <div class="col-md-12">
-            <div class="well">
-                <div id="flash">
-                    <% flash.each do |key, value| %>
-                        <div class="alert alert-<%= key %>"><%= value %></div>
-                    <% end %>
+          <div class="well">
+            <div id="flash">
+              <% flash.each do |key, value| %>
+                <div class="alert alert-<%= key %>">
+                  <%= value %>
                 </div>
-
-              <%= yield %>
+                <% end %>
             </div>
+
+            <%= yield %>
+          </div>
         </div>
         <!-- End of col-md-12 below section -->
       </div>
@@ -68,11 +74,11 @@
   <!-- Placed at the end of the document so the pages load faster -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script>
-   $(document).ready(function(){
-     setTimeout(function(){
-       $('#flash').remove();
-     }, 5000);
-   })
+    $(document).ready(function() {
+      setTimeout(function() {
+        $('#flash').remove();
+      }, 5000);
+    })
   </script>
 
 </body>
