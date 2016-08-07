@@ -14,24 +14,32 @@
           <%= render 'layouts/top_navigation' %>
         </div>
     </div><!-- End of navigation-container -->
-
     <div class="blog-header">
-        <div class="row">
+        <div class="">
             <div class="col-md-2">
-                a pictrue will go here
+                <a href="http://www.divegalaxsea.com/" target="_blank">
+                <%= image_tag 'diveGalaxsea.png', alt: 'Image of dive Galaxsea', class: 'project-image' %>
+                </a>
+                <br />
+                <span id="popover" class="project-text" data-container="body" data-toggle="popover" data-placement="right" data-title="Latest Project:" data-content="Dive operation in Mexico" style="cursor:help">Project:</span>
             </div>
             <div class="col-md-8 <%= @css_sytle %>">
                 <%= @page_title %>
             </div>
-            <div class="col-md-2">
-                maybe a picture here too
+            <div class="col-md-2 text-center">
+                <a href="https://yourresume.herokuapp.com/" target="_blank">
+                <%= image_tag 'yourResume.png', alt: 'Image of Your Resume', class: 'project-image' %>
+                </a>
+                <br />
+                <span id="popover-two" class="project-text" data-container="body" data-toggle="popover" data-placement="left" data-title="Latest Project:" data-content="Build your resume" style="cursor:help">Project:</span>
             </div>
+
         </div>
     </div>
 
     <div class="sub-header">
         <div class="col-md-12">
-            <form class="search-form navbar-form navbar-right" role="search">
+           <form class="search-form navbar-form navbar-right" role="search">
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="Search">
                 </div>
@@ -55,16 +63,18 @@
         </div>
     </footer>
 
-    <!-- Bootstrap core JavaScript
-            ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script>
    $(document).ready(function(){
      setTimeout(function(){
        $('#flash').remove();
      }, 5000);
    })
+
+   $("#popover").popover({ trigger: "hover" });
+   $("#popover-two").popover({ trigger: "hover" });
+  </script>
+  <script>
+   
   </script>
 </body>
 </html>

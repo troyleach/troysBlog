@@ -2,6 +2,7 @@
 @import "styles/top_navigation";
 @import "styles/index";
 @import "styles/tabs";
+@import "styles/blog_show";
 
 body {
     background-color: $primary-color;
@@ -13,6 +14,16 @@ body {
 img {
     width: 100%;
 }
+
+.project-image {
+    height: 75px;
+    width: auto;
+}
+
+.project-text {
+    font-size: 75%;
+}
+
 
 h1 {
     color: $font-color-main-titles;

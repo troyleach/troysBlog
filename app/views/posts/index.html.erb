@@ -1,15 +1,13 @@
-<!-- Start of first  columne -->
+<!-- Start of first  column -->
 <div class="design-border col-md-1">
     <div class="row">
         <div class="col-md-12">
             <%= image_tag 'me.jpg', :class => 'portrait' %>
         </div>
         <div class="category-links col-md-12">
-            <a href="/categories/show">Ruby</a>
-            <a href="#">R on R</a>
-            <a href="#">JavaScript</a>
-            <a href="#">AngularJS</a>
-            <a href="#">Eating Out</a>
+          <% @categories.each do |category| %>
+            <%= link_to category.name %>
+          <% end %>
         </div>
     </div>
 </div>
@@ -17,24 +15,16 @@
 <div class="second-column col-md-2">
     <div class="row">
         <div class="col-md-12">
-            <div class="post">
-                <h4>This is the title of the first post</h4>
-                <small>by: Troy Leach</small>
+            <% @group_of_blogs[1].each do |blog| %>
+                <h4><%= blog.title %></h4>
                 <p>
-                    is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. <a href="posts/show">More...</a>
+                    <%= raw blog.body.truncate(200) %>
+                    <small><%= link_to "Read More", post_path(blog) %></small>
                 </p>
-                <small>Date: March 1, 2016</small>
+                <small>by: <%= blog.user.name %></small><br />
+                <small><%= blog_date(blog.created_at) %></small>
                 <hr class="style1" />
-            </div>
-            <div class="post">
-                <h4>This is the title of the second post</h4>
-                <small>by: Troy Leach</small>
-                <p>
-                    is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. <a href="#">More...</a>
-                </p>
-                <small class="small">Date: March 1, 2016</small>
-                <hr class="style1" />
-            </div>
+            <% end %>
         </div>
     </div>
 </div>
@@ -43,40 +33,35 @@
     <div class="row">
         <div class="col-md-12">
             <div class="main-blog-title">
-                <span>Ruby on Rails</span>
+                <span><%= @main_blog.category.name %></span>
             </div>
             <div class="post">
-            <%= image_tag 'main-image.jpg', :class => 'main-blog-image' %>
+            <%= image_tag @main_blog.image.url, :class => 'main-blog-image' %>
                 <small class="pull-right">Credit for the pictrue</small>
-                <h4>This is the title of the main post</h4>
+                <h2><%= @main_blog.title %></h2>
                 <p>
-                    is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. <a href="#">More...</a>
+                    <%= raw @main_blog.body.truncate(200) %>
+                    <small><%= link_to "Read More", post_path(@main_blog) %></small>
                 </p>
-                <small>by: Troy Leach</small>
-                <small>Date: June 18, 2016</small>
+                <small>by: <%= @main_blog.user.name %></small>
+                <small><%= blog_date(@main_blog.created_at) %></small>
                 <hr class="style1" />
             </div>
         </div>
+            <% @group_of_blogs[2].each do |blog| %>
         <div class="col-md-6">
             <div class="post">
-                <h4>This is the title of the first post under main post</h4>
-                <small>by: Troy Leach</small>
+                <h4><%= blog.title %></h4>
                 <p>
-                    is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. <a href="#">More...</a>
+                    <%= raw blog.body.truncate(200) %>
+                    <small><%= link_to "Read More", post_path(blog) %></small>
                 </p>
-                <small>Date: July 3, 2015</small>
+                <small>by: <%= blog.user.name %></small><br />
+                <small><%= blog_date(blog.created_at) %></small>
+                <hr class="style1" />
             </div>
         </div>
-        <div class="col-md-6">
-            <div class="post">
-                <h4>This is the title of the second post under main post</h4>
-                <small>by: Troy Leach</small>
-                <p>
-                    is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. <a href="#">More...</a>
-                </p>
-                <small>Date: July 3, 2015</small>
-            </div>
-        </div>
+            <% end %>
     </div>
 </div>
 <!-- Start of far right column -->
