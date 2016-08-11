@@ -12,6 +12,7 @@
         </p>
         <small>by: <%= @blog.user.name %></small>
         <small><%= blog_date(@blog.created_at) %></small>
+        <%= render 'partials/comments' %>
       </div>
     </div>
   </div>
