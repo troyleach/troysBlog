@@ -1,4 +1,6 @@
 class Admin::UsersController < Admin::ApplicationController
+  before_filter :verify_logged_in
+
   def new
     @page_title = 'Add User'
     @user = User.new
@@ -13,6 +15,7 @@ class Admin::UsersController < Admin::ApplicationController
       render 'new'
     end
   end
+
 
   def edit
     @page_title = 'Edit User'

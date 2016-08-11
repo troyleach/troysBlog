@@ -1,0 +1,8 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "partials/globals";
+
+body {
+    padding-top: 40px;
+    background-color: $primary-color;
+}
