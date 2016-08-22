@@ -21,8 +21,21 @@
                     <%= raw blog.body.truncate(200) %>
                     <small><%= link_to "Read More", post_path(blog) %></small>
                 </p>
-                <small>by: <%= blog.user.name %></small><br />
-                <small><%= blog_date(blog.created_at) %></small>
+                <small class="return">by: <%= blog.user.name %><br />
+                  <%= blog_date(blog.created_at) %>
+                </small>
+                <div class="comment-box">
+                    <div class="row">
+                        <div class="col-sm-6">
+                          <span>Comments: <%= @main_blog.comments.length %></span>
+                        </div>
+                        <div class="col-sm-6 pull-right">
+                            <span class="pull-right likes">
+                              <i class="fa fa-heart-o" aria-hidden="true"></i> 54
+                            </span>
+                        </div>
+                    </div>
+                </div>
                 <hr class="style1" />
             <% end %>
         </div>
@@ -43,8 +56,21 @@
                     <%= raw @main_blog.body.truncate(200) %>
                     <small><%= link_to "Read More", post_path(@main_blog) %></small>
                 </p>
-                <small>by: <%= @main_blog.user.name %></small>
-                <small><%= blog_date(@main_blog.created_at) %></small>
+                <small class="return">by: <%= @main_blog.user.name %><br />
+                  <%= blog_date(@main_blog.created_at) %>
+                </small>
+                <div class="comment-box">
+                    <div class="row">
+                        <div class="col-sm-6">
+                          <span>Comments: <%= @main_blog.comments.length %></span>
+                        </div>
+                        <div class="col-sm-6 pull-right">
+                            <span class="pull-right likes">
+                              <i class="fa fa-heart-o" aria-hidden="true"></i> 54
+                            </span>
+                        </div>
+                    </div>
+                </div>
                 <hr class="style1" />
             </div>
         </div>
@@ -56,8 +82,21 @@
                     <%= raw blog.body.truncate(200) %>
                     <small><%= link_to "Read More", post_path(blog) %></small>
                 </p>
-                <small>by: <%= blog.user.name %></small><br />
-                <small><%= blog_date(blog.created_at) %></small>
+                <small class="return">by: <%= blog.user.name %><br/>
+                  <%= blog_date(blog.created_at) %>
+                </small>
+                <div class="comment-box">
+                    <div class="row">
+                        <div class="col-sm-6">
+                          <span>Comments: <%= @main_blog.comments.length %></span>
+                        </div>
+                        <div class="col-sm-6 pull-right">
+                            <span class="pull-right likes">
+                              <i class="fa fa-heart-o" aria-hidden="true"></i> 54
+                            </span>
+                        </div>
+                    </div>
+                </div>
                 <hr class="style1" />
             </div>
         </div>

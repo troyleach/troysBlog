@@ -16,6 +16,7 @@ class PostsController < ApplicationController
     @categories = Category.all
     @main_blog = get_current_blog(posts)
     @group_of_blogs = get_four_random_blogs(posts)
+    @comments = Comment.all
   end
 
   def show

@@ -20,6 +20,9 @@
     border-right: 1px solid $light-grey;
 }
 
+.post {
+}
+
 .main-page-title {
     font-size: 200%;
     margin: auto;
@@ -43,4 +46,22 @@ hr.style1 {
 .portrait {
     margin-top: 15px;
     margin-bottom: 15px;
+}
+
+.comment-box {
+    width: 100%;
+    background-color: $font-color-sub-titles;
+    padding-left: 5px;
+    font-size: 65%;
+}
+
+.likes {
+    padding-right: 20px;
+    color: red;
+}
+
+.return {
+    color: $light-grey;
+    display: inline-block;
+    line-height: 15px;
 }
