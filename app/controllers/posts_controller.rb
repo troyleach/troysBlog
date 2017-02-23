@@ -21,6 +21,7 @@ class PostsController < ApplicationController
 
   def show
     @blog = Post.find_by_id(params[:id])
+    @blog_title = '{ "blog": { "by": "TROYleach" } }'
     @page_title = @blog.category.name
     @css_sytle = 'main-blog-title'
     @comment = Comment.new

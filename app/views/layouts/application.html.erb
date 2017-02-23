@@ -27,6 +27,9 @@
                 <br />
                 <span id="popover" class="project-text" data-container="body" data-toggle="popover" data-placement="right" data-title="Latest Project:" data-content="Dive operation in Mexico" style="cursor:help">Project:</span>
             </div>
+            <div class="col-md-8">
+                <%= @blog_title %>
+            </div>
             <div class="col-md-8 <%= @css_sytle %>">
                 <%= @page_title %>
             </div>
@@ -40,12 +43,8 @@
 
         </div>
     </div>
-
-    <div class="sub-header">
-        <div class="col-md-12">
-            <%= render 'partials/search' %>
-        </div>
-    </div>
+<!-- TODO rename this file below it is a search and  line -->
+    <%= render 'partials/search' %>
     <section>
         <div class="content row">
             <div class="col-md-12">
