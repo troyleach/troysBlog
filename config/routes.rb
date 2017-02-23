@@ -52,7 +52,7 @@ Rails.application.routes.draw do
   get 'comments/destroy'
   end
 
-  get 'comments/new'
+  # get 'comments/new'
 
   namespace :admin do
   get 'categories/new'
@@ -124,4 +124,7 @@ Rails.application.routes.draw do
     resources :comments
   end
 
+  resources :comments do
+    resources :comments
+  end
 end

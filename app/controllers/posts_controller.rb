@@ -20,6 +20,8 @@ class PostsController < ApplicationController
   end
 
   def show
+    # TODO fix this below post or blog
+    @post = Post.find_by_id(params[:id])
     @blog = Post.find_by_id(params[:id])
     @blog_title = '{ "blog": { "by": "TROYleach" } }'
     @page_title = @blog.category.name

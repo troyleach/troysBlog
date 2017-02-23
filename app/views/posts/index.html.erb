@@ -56,7 +56,8 @@
                     <%= raw @main_blog.body.truncate(200) %>
                     <small><%= link_to "Read More", post_path(@main_blog) %></small>
                 </p>
-                <small class="return">by: <%= @main_blog.user.name %><br />
+                <!-- TODO fix this -->
+                <small class="return">by: <%#= @main_blog.user.name %><br />
                   <%= blog_date(@main_blog.created_at) %>
                 </small>
                 <div class="comment-box">
