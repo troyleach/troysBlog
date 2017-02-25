@@ -7,10 +7,10 @@
   <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
   
 
+<!-- TODO this script throws an error so I commented it out. everything seems to work without this..?? 2-25-2017-->
+  <!-- <script src="/app/assets/javascripts/bootstrap.min.js"></script> -->
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-<!-- TODO this script throws an error -->
-  <script src="/javascripts/bootstrap.min.js"></script>
 </head>
 <body>
     <div class="navigation-container">
@@ -71,8 +71,6 @@
    $("#popover").popover({ trigger: "hover" });
    $("#popover-two").popover({ trigger: "hover" });
   </script>
-  <script>
-   
-  </script>
+
 </body>
 </html>
