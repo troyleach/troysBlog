@@ -6,7 +6,7 @@
         </div>
         <div class="category-links col-md-12">
           <% @categories.each do |category| %>
-            <%= link_to category.name %>
+            <%= link_to category.name, category_path(category.id), class: 'feature-group-item' %>
           <% end %>
         </div>
     </div>
@@ -21,14 +21,27 @@
                     <%= raw blog.body.truncate(200) %>
                     <small><%= link_to "Read More", post_path(blog) %></small>
                 </p>
-                <small>by: <%= blog.user.name %></small><br />
-                <small><%= blog_date(blog.created_at) %></small>
+                <small class="return">by: <%= blog.user.name %><br />
+                  <%= blog_date(blog.created_at) %>
+                </small>
+                <div class="comment-box">
+                    <div class="row">
+                        <div class="col-sm-6">
+                          <span>Comments: <%= @main_blog.comments.length %></span>
+                        </div>
+                        <div class="col-sm-6 pull-right">
+                            <span class="pull-right likes">
+                              <i class="fa fa-heart-o" aria-hidden="true"></i> 54
+                            </span>
+                        </div>
+                    </div>
+                </div>
                 <hr class="style1" />
             <% end %>
         </div>
     </div>
 </div>
-<!-- Start of middle column -->
+<!-- Start of third column -->
 <div class="main-blog col-md-5">
     <div class="row">
         <div class="col-md-12">
@@ -43,8 +56,22 @@
                     <%= raw @main_blog.body.truncate(200) %>
                     <small><%= link_to "Read More", post_path(@main_blog) %></small>
                 </p>
-                <small>by: <%= @main_blog.user.name %></small>
-                <small><%= blog_date(@main_blog.created_at) %></small>
+                <!-- TODO fix this -->
+                <small class="return">by: <%#= @main_blog.user.name %><br />
+                  <%= blog_date(@main_blog.created_at) %>
+                </small>
+                <div class="comment-box">
+                    <div class="row">
+                        <div class="col-sm-6">
+                          <span>Comments: <%= @main_blog.comments.length %></span>
+                        </div>
+                        <div class="col-sm-6 pull-right">
+                            <span class="pull-right likes">
+                              <i class="fa fa-heart-o" aria-hidden="true"></i> 54
+                            </span>
+                        </div>
+                    </div>
+                </div>
                 <hr class="style1" />
             </div>
         </div>
@@ -56,8 +83,21 @@
                     <%= raw blog.body.truncate(200) %>
                     <small><%= link_to "Read More", post_path(blog) %></small>
                 </p>
-                <small>by: <%= blog.user.name %></small><br />
-                <small><%= blog_date(blog.created_at) %></small>
+                <small class="return">by: <%= blog.user.name %><br/>
+                  <%= blog_date(blog.created_at) %>
+                </small>
+                <div class="comment-box">
+                    <div class="row">
+                        <div class="col-sm-6">
+                          <span>Comments: <%= @main_blog.comments.length %></span>
+                        </div>
+                        <div class="col-sm-6 pull-right">
+                            <span class="pull-right likes">
+                              <i class="fa fa-heart-o" aria-hidden="true"></i> 54
+                            </span>
+                        </div>
+                    </div>
+                </div>
                 <hr class="style1" />
             </div>
         </div>
@@ -83,6 +123,11 @@
                     <div role="tabpanel" class="tab-pane" id="weather"><%= render 'weather' %></div>
                 </div>
             </div>
+        </div>
+        <div id="code-challenge" class="col-md-12">
+        <hr class="style1"/>
+            <h4>Code Challenge here</h4>  
+        <hr class="style1"/>
         </div>
         <div class="col-md-12">
             <%= image_tag 'cartoon.png', :class => 'cartoon-image', :alt => 'Image of cartoon' %>

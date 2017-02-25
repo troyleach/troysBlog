@@ -1,11 +1,30 @@
-<!-- Start of middle column -->
 <div class="main-blog col-md-8 col-md-offset-2">
   <div class="row">
     <div class="col-md-12">
-      <div class="main-blog-title">
-        Ruby
-      </div>
-      <div class="post">
+      <div class="post category-container">
+          <% @posts.each do |post| %>
+              <div class="well">
+                  <div>
+                      <h2><%= post.title %></h2>
+                  </div>
+                  <div>
+                      <%= raw post.body.truncate(200) %>
+                      <small><%= link_to "Read More", post_path(post) %></small>
+                  </div>
+                <div class="comment-box">
+                    <div class="row">
+                        <div class="col-sm-6">
+                          <span>Comments: <%= post.comments.length %></span>
+                        </div>
+                        <div class="col-sm-6 pull-right">
+                            <span class="pull-right likes">
+                              <i class="fa fa-heart-o" aria-hidden="true"></i> 54
+                            </span>
+                        </div>
+                    </div>
+                </div>
+              </div>
+          <% end %>
       </div>
     </div>
   </div>

@@ -4,9 +4,13 @@
   <title>TroysBlog</title>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <link href='https://fonts.googleapis.com/css?family=Gravitas+One' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+  
+
+<!-- TODO this script throws an error so I commented it out. everything seems to work without this..?? 2-25-2017-->
+  <!-- <script src="/app/assets/javascripts/bootstrap.min.js"></script> -->
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <script src="bootstrap.min.js"></script>
 </head>
 <body>
     <div class="navigation-container">
@@ -23,6 +27,9 @@
                 <br />
                 <span id="popover" class="project-text" data-container="body" data-toggle="popover" data-placement="right" data-title="Latest Project:" data-content="Dive operation in Mexico" style="cursor:help">Project:</span>
             </div>
+            <div class="col-md-8">
+                <%= @blog_title %>
+            </div>
             <div class="col-md-8 <%= @css_sytle %>">
                 <%= @page_title %>
             </div>
@@ -36,17 +43,8 @@
 
         </div>
     </div>
-
-    <div class="sub-header">
-        <div class="col-md-12">
-           <form class="search-form navbar-form navbar-right" role="search">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search">
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-        </div>
-    </div>
+<!-- TODO rename this file below it is a search and  line -->
+    <%= render 'partials/search' %>
     <section>
         <div class="content row">
             <div class="col-md-12">
@@ -73,8 +71,6 @@
    $("#popover").popover({ trigger: "hover" });
    $("#popover-two").popover({ trigger: "hover" });
   </script>
-  <script>
-   
-  </script>
+
 </body>
 </html>

@@ -37,7 +37,7 @@
     font-family: $font-family;
     width: 100%;
     background-color: $secondary-color;
-    border-bottom: 1px solid #ccc;
+    /* border-bottom: 1px solid #ccc; */
     height: 25px;
     height: 100px;
     margin: 0px auto;
@@ -46,14 +46,31 @@
 }
 
 /* blog sub-header search bar */
+/* do I need the this rul sub-header? */
 .sub-header {
     width: 100%;
     background-color: $dark-grey;
     border-bottom: 1px solid #ccc;
-    height: 50px;
+    height: 35px;
     margin: 0 auto;
 }
 
+/* blog sub-header search bar */
+.search-bar {
+    width: 100%;
+    background-color: $dark-grey;
+    border-bottom: 1px solid #ccc;
+    height: 45px;
+    margin: 0 auto;
+    margin-top: 25px;
+}
+
+.search-form .form-group {
+    padding: 5px 0 5px 0;
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+}
 /* footer */
 .footer-container {
     text-align: center;
