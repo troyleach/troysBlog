@@ -6,13 +6,21 @@
       </div>
       <div class="post">
         <%= image_tag @blog.image.url, :class => 'main-blog-image' %>
+          <!-- TODO this needs to be fixed in that if the picture is smaller it ends up on the top right -->
         <small class="pull-right">Credit for the pictrue</small>
         <p class="blog-content">
           <%= raw @blog.body %>
         </p>
-        <small>by: <%= @blog.user.name %></small>
+        <small>by: <%#= @blog.user.name %></small>
         <small><%= blog_date(@blog.created_at) %></small>
-        <%= render 'partials/comments' %>
+<%= form_for [@post, Comment.new] do |f| %>
+<%= f.text_area :body, placeholder: "Add a comment" %><br/>
+<%= f.submit "Add Comment" %>
+<% end %>
+<ul>
+  <%= render(partial: 'partials/comment', collection: @post.comments) %>
+</ul>
+        <%#= render 'partials/comments' %>
       </div>
     </div>
   </div>

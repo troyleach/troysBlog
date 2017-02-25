@@ -1,8 +1,9 @@
 class CategoriesController < ApplicationController
   def show
     @category = Category.find(params[:id])
-    @page_title = 'Categories'
-    @css_sytle = 'main-blog-title'
+    @blog_title = '{ "blog": { "by": "TROYleach" } }'
+    @page_title = @category.name
+    @css_sytle = 'category-title'
     @categories = Category.all
     @posts = @category.posts
   end

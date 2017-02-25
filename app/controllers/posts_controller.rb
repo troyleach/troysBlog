@@ -16,10 +16,14 @@ class PostsController < ApplicationController
     @categories = Category.all
     @main_blog = get_current_blog(posts)
     @group_of_blogs = get_four_random_blogs(posts)
+    @comments = Comment.all
   end
 
   def show
+    # TODO fix this below post or blog
+    @post = Post.find_by_id(params[:id])
     @blog = Post.find_by_id(params[:id])
+    @blog_title = '{ "blog": { "by": "TROYleach" } }'
     @page_title = @blog.category.name
     @css_sytle = 'main-blog-title'
     @comment = Comment.new

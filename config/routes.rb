@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   root 'posts#index'
-  get 'contact' => 'contacts#new'
-  get 'contacts/create'
+  # get 'contact' => 'contacts#new'
+  # get 'contacts/create'
+  match '/contacts',     to: 'contacts#new', via: 'get'
+  resources "contacts", only: [:new, :create]
+
   get 'about' => 'about#index'
 
   namespace :admin do
@@ -48,7 +51,7 @@ Rails.application.routes.draw do
   get 'comments/destroy'
   end
 
-  get 'comments/new'
+  # get 'comments/new'
 
   namespace :admin do
   get 'categories/new'
@@ -120,4 +123,11 @@ Rails.application.routes.draw do
     resources :comments
   end
 
+  resources :posts do
+    resources :comments
+  end
+
+  resources :comments do
+    resources :comments
+  end
 end
