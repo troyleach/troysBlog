@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="app">
 <head>
   <title>TroysBlog</title>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -12,7 +12,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body ng-controller="MainCtrl as main">
     <div class="navigation-container">
         <div class="top-navigation">
           <%= render 'layouts/top_navigation' %>
