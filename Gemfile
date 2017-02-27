@@ -33,7 +33,9 @@ gem 'will_paginate', '~> 3.1.0'
 
 # Editor that is super cool
 gem "wysiwyg-rails"
+
 gem "font-awesome-rails"
+# gem 'font-awesome-sass', '~> 4.7.0'
 
 # To upload files
 gem "paperclip", "~> 5.0.0"

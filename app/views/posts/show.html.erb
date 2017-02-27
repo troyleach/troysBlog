@@ -1,28 +1,31 @@
 <div class="main-blog col-md-8 col-md-offset-2">
-  <div class="row">
-    <div class="col-md-12">
-        {{ main.testing }}
-      <div class="main-blog-title">
-          <%= @blog.title %>
-      </div>
-      <div class="post">
-        <%= image_tag @blog.image.url, :class => 'main-blog-image' %>
-          <!-- TODO this needs to be fixed in that if the picture is smaller it ends up on the top right -->
-        <small class="pull-right">Credit for the pictrue</small>
-        <p class="blog-content">
-          <%= raw @blog.body %>
-        </p>
-        <small>by: <%#= @blog.user.name %></small>
-        <small><%= blog_date(@blog.created_at) %></small>
-<%= form_for [@post, Comment.new] do |f| %>
-<%= f.text_area :body, placeholder: "Add a comment" %><br/>
-<%= f.submit "Add Comment" %>
-<% end %>
-<ul>
-  <%= render(partial: 'partials/comment', collection: @post.comments) %>
-</ul>
-        <%#= render 'partials/comments' %>
-      </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="main-blog-title">
+                <%= @blog.title %>
+            </div>
+            <div class="post">
+                <%= image_tag @blog.image.url, :class => 'main-blog-image' %>
+                <!-- TODO this needs to be fixed in that if the picture is smaller it ends up on the top right -->
+                <small class="pull-right">Credit for the pictrue</small>
+                <p class="blog-content">
+                    <%= raw @blog.body %>
+                </p>
+                <hr class="comment-line"/>
+                <p>
+                    <%= @post_comments.length %> Comments
+                </p>
+                <!-- <small>by: <%#= @blog.user.name %></small> -->
+                <!-- <small><%#= blog_date(@blog.created_at) %></small> -->
+                <%= form_for [@post, Comment.new] do |f| %>
+                    <%= f.text_area :body, placeholder: "Add a comment", class: 'add-comment-box' %><br/>
+                    <%= f.submit "Add Comment", class: 'btn btn-primary pull-right' %>
+                <% end %>
+                <br/>
+                <ul style="list-style-type: none">
+                    <%= render(partial: 'partials/comment', collection: @post.comments) %>
+                </ul>
+            </div>
+        </div>
     </div>
-  </div>
 </div>

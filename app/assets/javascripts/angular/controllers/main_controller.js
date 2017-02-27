@@ -5,7 +5,14 @@
         "$scope", "$http",
         function ($scope, $http) {
             var main = this;
-            main.testing = 'this is a test fucker face';
+
+            main.commentReply = function(idx) {
+                main.showCommentBox = idx;
+            };
+
+            main.commentReplyCancel = function() {
+                main.showCommentBox = false;
+            };
         }
     ]);
 })();

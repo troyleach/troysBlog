@@ -1,14 +1,44 @@
 <li>
-  <%= comment.body %> -
-  <small>Submitted <%= time_ago_in_words(comment.created_at) %> ago</small>
+    <table>
+        <tr>
+            <td class="comment-user-pictrue">
+                <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+            </td>
+            <td>
+                <header>
+                    <small>User Name | Submitted <%= time_ago_in_words(comment.created_at) %> ago</small>
+                </header>
+                <section>
+                    <p class="comment-text-body">
+                        <%= comment.body %>
+                    </p>
+                </section>
+                <footer>
+                    <small ng-click="main.commentReply(<%= comment.id %>)">Reply</small>
+                </footer>
+            </td>
+        </tr>
+    </table>
+    <div class="sub-comment-box" ng-show="main.showCommentBox == <%= comment.id %>">
+        <%= form_for [comment, Comment.new] do |f| %>
+            <%= f.text_area :body, placeholder: "Add a Reply", class: 'sub-text-area' %><br/>
+            <div class="comment-btns">
+                <div class="row">
+                    <div class="col-md-6">
+                        <span class="btn btn-sm btn-danger" ng-click="main.commentReplyCancel()">Cancel</span>
+                    </div>
+                    <div class="col-md-6">
+                        <%= f.submit "Save", class: "btn btn-sm btn-success pull-right"  %>
+                    </div>
+                </div>
+            </div>
+        <% end %>
 
-  <%= form_for [comment, Comment.new] do |f| %>
-      <%= f.text_area :body, placeholder: "Add a Reply" %><br/>
-      <%= f.submit "Reply"  %>
-      <% end %>
+    </div>
+    <br/>
 
-  <ul>
-      <%= render partial: 'partials/comment', collection: comment.comments %>
-  </ul>
+    <ul style="list-style-type: none">
+        <%= render partial: 'partials/comment', collection: comment.comments %>
+    </ul>
 
 </li>
