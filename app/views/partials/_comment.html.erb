@@ -19,7 +19,7 @@
             </td>
         </tr>
     </table>
-    <div class="sub-comment-box" ng-show="main.showCommentBox == <%= comment.id %>">
+    <div class="sub-comment-box" ng-if="main.showCommentBox == <%= comment.id %>">
         <%= form_for [comment, Comment.new] do |f| %>
             <%= f.text_area :body, placeholder: "Add a Reply", class: 'sub-text-area' %><br/>
             <div class="comment-btns">

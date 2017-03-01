@@ -5,6 +5,8 @@
         "$scope", "$http",
         function ($scope, $http) {
             var main = this;
+            main.showCommentBox = 0;
+
 
             main.commentReply = function(idx) {
                 main.showCommentBox = idx;

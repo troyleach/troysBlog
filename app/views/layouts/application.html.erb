@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="app">
+<html>
 <head>
   <title>TroysBlog</title>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -12,7 +12,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body ng-controller="MainCtrl as main">
+<body  ng-app="app">
     <div class="navigation-container">
         <div class="top-navigation">
           <%= render 'layouts/top_navigation' %>
@@ -47,7 +47,7 @@
 <!-- TODO rename this file below it is a search and  line -->
     <%= render 'partials/search' %>
 
-    <section>
+    <section ng-controller="MainCtrl as main">
         <div class="content row">
             <div class="col-md-12">
                     <%= yield %>

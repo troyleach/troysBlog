@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -51,6 +51,8 @@ gem "autoprefixer-rails"
 
 # send email right from a form, this is just for now, i wll switch to mail gun or send grid
 gem 'mail_form'
+
+gem 'jquery-turbolinks'
 
 # this is for ruby forms, however I think I will use Angularjs instead (this was braking shit so I commented it out for now)
 # gem 'simple_form'
