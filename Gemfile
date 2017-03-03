@@ -59,8 +59,21 @@ gem 'jquery-turbolinks'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  # rspec as of 3-3-2017
   gem 'byebug'
   gem 'pry'
+  gem "rspec-rails", "~> 3.5"
+  gem "factory_girl_rails", "~> 4.8.0"
+end
+
+# Added this below and the last two gems above for testing
+group :test do
+  gem "faker", "~> 1.7.3"
+  gem "capybara", "~> 2.12.1"
+  gem "database_cleaner"
+  gem "launchy"
+  gem "selenium-webdriver"
+  gem 'shoulda-matchers', '~> 3.1'
 end
 
 group :development do
