@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   before_action :find_commentable
+  before_action :authenticate_user only: [:create]
 
   def new
     @comment = Comment.new
@@ -20,9 +21,13 @@ class CommentsController < ApplicationController
   end
 
   private
-  
+
   def comment_params
     params.require(:comment).permit(:name, :email, :body, :post_id)
+  end
+
+  def authenticate_user
+     
   end
 
   def find_commentable

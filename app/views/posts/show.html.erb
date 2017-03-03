@@ -17,10 +17,34 @@
                 </p>
                 <!-- <small>by: <%#= @blog.user.name %></small> -->
                 <!-- <small><%#= blog_date(@blog.created_at) %></small> -->
-                <%= form_for [@post, Comment.new] do |f| %>
-                    <%= f.text_area :body, placeholder: "Add a comment", class: 'add-comment-box' %><br/>
-                    <%= f.submit "Add Comment", class: 'btn btn-primary pull-right' %>
-                <% end %>
+
+                <div class="panel-group">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" href="#collapse1">Leave a comment</a>
+                            </h4>
+                        </div>
+                        <div id="collapse1" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <%= form_for [@post, Comment.new] do |f| %>
+                                    <%= f.text_area :body, placeholder: "Add a comment", class: 'add-comment-box' %><br/>
+
+                                    <p>
+                                        Email: <br/>
+                                    </p>
+                                    <%= f.text_field :email %> <span class="star"> *</span> <br />
+                                    <p>
+                                        Name: <br/>
+                                    </p>
+                                    <%= f.text_field :name %> <span class="star"> *</span> <br />
+                                    <%= f.submit "Add Comment", class: 'btn btn-primary pull-right' %>
+                                <% end %>
+                            </div>
+                            <div class="panel-footer"></div>
+                        </div>
+                    </div>
+                </div>
                 <br/>
                 <ul style="list-style-type: none">
                     <%= render(partial: 'partials/comment', collection: @post.comments) %>
