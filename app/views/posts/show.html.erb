@@ -1,5 +1,19 @@
 <div class="main-blog col-md-8 col-md-offset-2">
     <div class="row">
+        <div class="col-sm-12">
+                <div class="alert alert-success">
+                    <%= flash[:notice] %>
+                </div>
+            <% end %>
+
+            <% if flash[:alert] %>
+                <div class="alert alert-danger">
+                    <%= flash[:alert] %>
+                </div>
+            <% end %>
+        </div>
+    </div>
+    <div class="row">
         <div class="col-md-12">
             <div class="main-blog-title">
                 <%= @blog.title %>
@@ -15,9 +29,6 @@
                 <p>
                     <%= @post.comments.length %> Comments
                 </p>
-                <!-- <small>by: <%#= @blog.user.name %></small> -->
-                <!-- <small><%#= blog_date(@blog.created_at) %></small> -->
-
                 <div class="panel-group">
                     <div class="panel panel-default">
                         <div class="panel-heading">

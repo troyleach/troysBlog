@@ -11,13 +11,11 @@
 #  post_id          :integer
 #  commentable_id   :integer
 #  commentable_type :string
-#
 
-class Comment < ActiveRecord::Base
-  belongs_to :commentable, polymorphic: true
-  has_many :comments, as: :commentable
-
-  validates :name, presence: true
-  validates :email, presence: true
-
+FactoryGirl.define do
+  factory :comment do
+    name 'fake name'
+    email 'fake@email.com'
+    body 'This is the body of the comment'
+  end
 end

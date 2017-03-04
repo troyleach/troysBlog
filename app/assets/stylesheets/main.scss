@@ -8,13 +8,19 @@
 
 body {
     background-color: $primary-color;
-    font-family: $font-family-test;
+    font-family: $font-family-body-text;
+    font-weight: 300;
+    color: #404040;
     font-size: 1.8em;
     line-height: 1.5em;
 }
 
 img {
     width: 100%;
+}
+
+default-img {
+    height: 50%;
 }
 
 .project-image {

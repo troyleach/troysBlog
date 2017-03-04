@@ -54,6 +54,9 @@ gem 'mail_form'
 
 gem 'jquery-turbolinks'
 
+#Cool gem, displays the schema in the model files and specs -basically shows the model attributes
+gem 'annotate'
+
 # this is for ruby forms, however I think I will use Angularjs instead (this was braking shit so I commented it out for now)
 # gem 'simple_form'
 

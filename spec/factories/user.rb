@@ -14,21 +14,11 @@
 #  image_content_type :string
 #  image_file_size    :integer
 #  image_updated_at   :datetime
-#
 
-class Post < ActiveRecord::Base
-  belongs_to :category
-  belongs_to :user
-  has_many :comments, as: :commentable
-
-  validates :title, presence: true
-  validates :category_id, presence: true
-  validates :body, presence: true
-
-  has_attached_file :image, :default_url => "ohno.gif", :style => 'width: 100px'
-  validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
-
-  def self.search(query)
-    where("title like ? OR body like ?", "%#{query}%", "%#{query}%")
+FactoryGirl.define do
+  factory :user do
+    name 'troy leach'
+    email 'troy@email.com'
+    password 'password'
   end
 end

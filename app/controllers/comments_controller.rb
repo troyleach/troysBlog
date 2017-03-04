@@ -1,23 +1,23 @@
 class CommentsController < ApplicationController
+  include ApplicationHelper
+
   before_action :find_commentable
-  before_action :authenticate_user only: [:create]
+  before_action :authenticate_user, only: [:create]
 
   def new
     @comment = Comment.new
   end
 
   def create
-    # @post = Post.find(params[:post_id])
     @comment = @commentable.comments.new comment_params
 
-    if @comment.save!
+    if @comment.save
       redirect_to :back, notice: "Your comment was successfully posted!"
     else
-      redirect_to :back, notice: "Your comment wasn't posted!"
+      @errors = @comment.errors.messages
+      error_message = @errors.map { |k, v| "#{k} #{v[0]}" }.to_sentence
+      redirect_to :back, alert: "Your comment did not save - #{error_message}"
     end
-    # @comment = @post.comments.create(comment_params)
-
-    # redirect_to post_path(@post)
   end
 
   private
@@ -27,7 +27,20 @@ class CommentsController < ApplicationController
   end
 
   def authenticate_user
-     
+    commentor = User.find_by_email(params[:comment][:email])
+    if commentor.present?
+      return
+    else
+      pass = generate_password
+      commentor = User.new(name: params[:comment][:name], email: params[:comment][:email], password: pass)
+
+      if commentor.save!
+        return
+      else
+        redirect_to :back, notice: "Your comment wasn't posted!"
+      end
+    end
+
   end
 
   def find_commentable

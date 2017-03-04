@@ -6,7 +6,7 @@
             </td>
             <td>
                 <header>
-                    <small>User Name | Submitted <%= time_ago_in_words(comment.created_at) %> ago</small>
+                    <small><%= comment.name %> | Submitted <%= time_ago_in_words(comment.created_at) %> ago</small>
                 </header>
                 <section>
                     <p class="comment-text-body">
@@ -20,19 +20,36 @@
         </tr>
     </table>
     <div class="sub-comment-box" ng-if="main.showCommentBox == <%= comment.id %>">
-        <%= form_for [comment, Comment.new] do |f| %>
-            <%= f.text_area :body, placeholder: "Add a Reply", class: 'sub-text-area' %><br/>
-            <div class="comment-btns">
-                <div class="row">
-                    <div class="col-md-6">
-                        <span class="btn btn-sm btn-danger" ng-click="main.commentReplyCancel()">Cancel</span>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <%= form_for [comment, Comment.new] do |f| %>
+
+                    <%= f.text_area :body, placeholder: "Add a Reply", class: 'sub-text-area' %><br/>
+
+                    <p>
+                        Email: <br/>
+                    </p>
+                    <%= f.text_field :email %> <span class="star"> *</span> <br />
+                    <p>
+                        Name: <br/>
+                    </p>
+                    <%= f.text_field :name %> <span class="star"> *</span> <br />
+                    <br/>
+                    <div class="panel-footer">
+                        <div class="comment-btns">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <span class="btn btn-sm btn-danger" ng-click="main.commentReplyCancel()">Cancel</span>
+                                </div>
+                                <div class="col-md-6">
+                                    <%= f.submit "Save", class: "btn btn-sm btn-success pull-right"  %>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-6">
-                        <%= f.submit "Save", class: "btn btn-sm btn-success pull-right"  %>
-                    </div>
-                </div>
+                <% end %>
             </div>
-        <% end %>
+        </div>
 
     </div>
     <br/>

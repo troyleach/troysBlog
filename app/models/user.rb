@@ -1,10 +1,25 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id            :integer          not null, primary key
+#  name          :string
+#  email         :string
+#  password_hash :string
+#  password_salt :string
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#
+
 class User < ActiveRecord::Base
   attr_accessor :password
   before_save :encrypt_password
   has_many :posts
+  EMAIL_REXP = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
+
 
   validates :name, presence: true
-  validates :email, presence: true
+  validates :email, presence: true, format: { with: EMAIL_REXP, message: "is not a valid email address" }
   validates :password, presence: true
   validates :password, confirmation: true
 
