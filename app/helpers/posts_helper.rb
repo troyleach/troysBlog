@@ -19,8 +19,10 @@ module PostsHelper
     blogs = {}
 
     if posts.present?
+
       posts = posts.sort_by { |date| date.created_at }.to_a
-      posts.pop
+      # TODO I think this was for I would want the first blog
+      # posts.pop
       posts = posts.shuffle
       posts = posts.slice(1..4)
       posts = posts.shuffle
