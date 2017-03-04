@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   root 'posts#index'
-
   # get 'contact' => 'contacts#new'
   # get 'contacts/create'
   match '/contacts',     to: 'contacts#new', via: 'get'
@@ -118,6 +117,10 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :posts, :categories, :comments, :users, :sessions
+  end
+
+  resources :posts do
+    resources :comments
   end
 
   resources :posts do

@@ -1,14 +1,60 @@
 <li>
-  <%= comment.body %> -
-  <small>Submitted <%= time_ago_in_words(comment.created_at) %> ago</small>
+    <table>
+        <tr>
+            <td class="comment-user-pictrue">
+                <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+            </td>
+            <td>
+                <header>
+                    <small><%= comment.name %> | Submitted <%= time_ago_in_words(comment.created_at) %> ago</small>
+                </header>
+                <section>
+                    <p class="comment-text-body">
+                        <%= comment.body %>
+                    </p>
+                </section>
+                <footer>
+                    <small ng-click="main.commentReply(<%= comment.id %>)">Reply</small>
+                </footer>
+            </td>
+        </tr>
+    </table>
+    <div class="sub-comment-box" ng-if="main.showCommentBox == <%= comment.id %>">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <%= form_for [comment, Comment.new] do |f| %>
 
-  <%= form_for [comment, Comment.new] do |f| %>
-      <%= f.text_area :body, placeholder: "Add a Reply" %><br/>
-      <%= f.submit "Reply"  %>
-      <% end %>
+                    <%= f.text_area :body, placeholder: "Add a Reply", class: 'sub-text-area' %><br/>
 
-  <ul>
-      <%= render partial: 'partials/comment', collection: comment.comments %>
-  </ul>
+                    <p>
+                        Email: <br/>
+                    </p>
+                    <%= f.text_field :email %> <span class="star"> *</span> <br />
+                    <p>
+                        Name: <br/>
+                    </p>
+                    <%= f.text_field :name %> <span class="star"> *</span> <br />
+                    <br/>
+                    <div class="panel-footer">
+                        <div class="comment-btns">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <span class="btn btn-sm btn-danger" ng-click="main.commentReplyCancel()">Cancel</span>
+                                </div>
+                                <div class="col-md-6">
+                                    <%= f.submit "Save", class: "btn btn-sm btn-success pull-right"  %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+
+    </div>
+    <br/>
+    <ul style="list-style-type: none">
+        <%= render partial: 'partials/comment', collection: comment.comments %>
+    </ul>
 
 </li>

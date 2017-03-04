@@ -4,15 +4,15 @@
   <title>TroysBlog</title>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <link href='https://fonts.googleapis.com/css?family=Gravitas+One' rel='stylesheet' type='text/css'>
-  <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
-  
+  <!-- <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' rel='stylesheet' type='text/css'> -->
+  <script src="https://use.fontawesome.com/8631aca445.js"></script>
 
 <!-- TODO this script throws an error so I commented it out. everything seems to work without this..?? 2-25-2017-->
   <!-- <script src="/app/assets/javascripts/bootstrap.min.js"></script> -->
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body  ng-app="app">
     <div class="navigation-container">
         <div class="top-navigation">
           <%= render 'layouts/top_navigation' %>
@@ -43,9 +43,11 @@
 
         </div>
     </div>
+
 <!-- TODO rename this file below it is a search and  line -->
     <%= render 'partials/search' %>
-    <section>
+
+    <section ng-controller="MainCtrl as main">
         <div class="content row">
             <div class="col-md-12">
                     <%= yield %>

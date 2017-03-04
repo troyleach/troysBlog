@@ -8,13 +8,23 @@
 
 body {
     background-color: $primary-color;
-    font-family: $font-family-test;
+    font-family: $font-family-body-text;
+    font-weight: 300;
+    color: #404040;
     font-size: 1.8em;
     line-height: 1.5em;
 }
 
 img {
     width: 100%;
+}
+
+img .default-img {
+    height: 50% !important;
+}
+
+.main-blog-image {
+    height: 100%;
 }
 
 .project-image {
@@ -65,5 +75,10 @@ hr.style2 {
 	border-top: 6px double #8c8b8b;
   margin-top: 30px;
   margin-bottom: 0;
+}
+
+.star {
+    color: red;
+    font-size: 1.5em;
 }
 

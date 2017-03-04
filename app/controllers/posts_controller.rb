@@ -26,6 +26,7 @@ class PostsController < ApplicationController
     @blog_title = '{ "blog": { "by": "TROYleach" } }'
     @page_title = @blog.category.name
     @css_sytle = 'main-blog-title'
+    @post_comments = Comment.where(post_id: params[:id])
     @comment = Comment.new
     @comments = Comment.all
   end

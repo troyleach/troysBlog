@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -33,7 +33,9 @@ gem 'will_paginate', '~> 3.1.0'
 
 # Editor that is super cool
 gem "wysiwyg-rails"
+
 gem "font-awesome-rails"
+# gem 'font-awesome-sass', '~> 4.7.0'
 
 # To upload files
 gem "paperclip", "~> 5.0.0"
@@ -50,13 +52,31 @@ gem "autoprefixer-rails"
 # send email right from a form, this is just for now, i wll switch to mail gun or send grid
 gem 'mail_form'
 
+gem 'jquery-turbolinks'
+
+#Cool gem, displays the schema in the model files and specs -basically shows the model attributes
+gem 'annotate'
+
 # this is for ruby forms, however I think I will use Angularjs instead (this was braking shit so I commented it out for now)
 # gem 'simple_form'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  # rspec as of 3-3-2017
   gem 'byebug'
   gem 'pry'
+  gem "rspec-rails", "~> 3.5"
+  gem "factory_girl_rails", "~> 4.8.0"
+end
+
+# Added this below and the last two gems above for testing
+group :test do
+  gem "faker", "~> 1.7.3"
+  gem "capybara", "~> 2.12.1"
+  gem "database_cleaner"
+  gem "launchy"
+  gem "selenium-webdriver"
+  gem 'shoulda-matchers', '~> 3.1'
 end
 
 group :development do

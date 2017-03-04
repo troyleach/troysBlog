@@ -6,13 +6,9 @@
 #  name       :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#
 
-class Category < ActiveRecord::Base
-  has_many :posts
-  validates :name, presence: true
-
-  def self.search(query)
-    where("name like ?", "%#{query}%")
+FactoryGirl.define do
+  factory :category do
+    name "Ruby"
   end
 end
