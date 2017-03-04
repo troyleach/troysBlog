@@ -57,5 +57,4 @@ RSpec.describe CommentsController, type: :controller do
     end
 
   end
-
 end

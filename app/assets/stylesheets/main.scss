@@ -19,8 +19,12 @@ img {
     width: 100%;
 }
 
-default-img {
-    height: 50%;
+img .default-img {
+    height: 50% !important;
+}
+
+.main-blog-image {
+    height: 100%;
 }
 
 .project-image {

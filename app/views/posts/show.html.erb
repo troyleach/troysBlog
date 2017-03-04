@@ -1,6 +1,7 @@
 <div class="main-blog col-md-8 col-md-offset-2">
     <div class="row">
         <div class="col-sm-12">
+            <% if flash[:notice] %>
                 <div class="alert alert-success">
                     <%= flash[:notice] %>
                 </div>
@@ -19,9 +20,17 @@
                 <%= @blog.title %>
             </div>
             <div class="post">
-                <%= image_tag @blog.image.url, :class => 'main-blog-image' %>
+                <div class="post-image">
+                    <% if @blog.image.url == 'ohno.gif' %>
+                        <%= image_tag @blog.image.url, :class => 'default-img' %>
+                    <% else %>
+                        <%= image_tag @blog.image.url, :class => 'main-blog-image' %>
+                    <% end %>
+                </div>
                 <!-- TODO this needs to be fixed in that if the picture is smaller it ends up on the top right -->
-                <small class="pull-right">Credit for the pictrue</small>
+                <div>
+                    <small class="pull-right">Credit for the pictrue</small>
+                </div>
                 <p class="blog-content">
                     <%= raw @blog.body %>
                 </p>
