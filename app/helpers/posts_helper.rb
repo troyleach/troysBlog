@@ -15,21 +15,25 @@ module PostsHelper
       :group_one => nil,
       :group_two => nil
     }
-    posts = posts.sort_by { |date| date.created_at }.to_a
-    posts.pop
-    posts = posts.shuffle
-    posts = posts.slice(1..4)
-    posts = posts.shuffle
 
-    # data.each do |key, value|
-    #   posts.each_slice(2) do |value|
-    #     data[key] = value
-    #   end
-    # end
-    #refactor this so it makes more sense
     blogs = {}
-    posts.each_slice(2).with_index do |value, index|
-      blogs[index + 1] = value
+
+    if posts.present?
+      posts = posts.sort_by { |date| date.created_at }.to_a
+      posts.pop
+      posts = posts.shuffle
+      posts = posts.slice(1..4)
+      posts = posts.shuffle
+
+      # data.each do |key, value|
+      #   posts.each_slice(2) do |value|
+      #     data[key] = value
+      #   end
+      # end
+      #refactor this so it makes more sense
+      posts.each_slice(2).with_index do |value, index|
+        blogs[index + 1] = value
+      end
     end
     return blogs
   end
