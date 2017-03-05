@@ -20,4 +20,5 @@
 //= require app
 //= require angular-mocks
 //= require bootstrap-sprockets
+//= require ckeditor/init
 //= require_tree .
