@@ -2,8 +2,7 @@ class PostsController < ApplicationController
   include PostsHelper
 
   def index
-    # this is not going to work yet bc I have this set up diff. I need to rredirect to a diff page
-    
+    # this is not going to work yet bc I have this set up diff. I need to redirect to a diff page
     if params[:search]
       @posts = Post.search(params[:search]).order("created_at DESC").paginate(:per_page => 10, :page => params[:page])
     else
