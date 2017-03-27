@@ -37,6 +37,7 @@ gem "wysiwyg-rails"
 # this Editor might be cooler
 gem 'ckeditor', '~> 4.1.3'
 gem 'carrierwave', '~> 1.0'
+gem "mini_magick"
 
 gem "font-awesome-rails"
 # gem 'font-awesome-sass', '~> 4.7.0'
