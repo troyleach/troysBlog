@@ -21,4 +21,5 @@
 //= require angular-mocks
 //= require bootstrap-sprockets
 //= require ckeditor/init
+//= require prism
 //= require_tree .
