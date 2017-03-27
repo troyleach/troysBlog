@@ -1,0 +1,48 @@
+<%= form_for [:admin, @post] do |form| %>
+    <!-- check for erros -->
+    <% if @post.errors.any? %>
+        <% @post.errors.full_messages.each do |msg| %>
+            <div class="alert alert-danger">
+                <%= msg %>
+            </div>
+        <% end %>
+    <% end %>
+
+    <div class="form-group">
+        <%= form.label :title %>
+        <%= form.text_field :title, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+        <%= form.label :category %>
+        <%= form.select :category_id, Category.all.collect { |category| [category.name, category.id] }, { :include_blank => 'Select One' }, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+        <%= form.label :author %>
+        <%= form.select :user_id, User.all.collect { |user| [user.name, user.id] }, { :include_blank => 'Select One' }, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+        <%= form.label 'Main Image' %><br/>
+        <% if @post.image.exists? %>
+            <%= image_tag @post.image.url, style: "width: 75px; padding-bottom: 10px;" %><br/>
+            <%= form.check_box :delete_image %>Delete Image<br/>
+        <% end %>
+        <br/>
+        <%= form.file_field :image, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+        <%= form.label :tags %>
+        <%= form.text_field :tags, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+        <%= form.cktext_area :body, :as => :ckeditor, input_html: {:ckeditor => {:toolbar => 'FULL'}}, class: "form-control" %>
+    </div>
+
+    <br/>
+    <%= form.submit "Submit", class: 'btn btn-primary' %>
+    <%= link_to "Cancel", admin_posts_path, class: 'btn btn-default' %>
+<% end %>

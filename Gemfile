@@ -34,6 +34,10 @@ gem 'will_paginate', '~> 3.1.0'
 # Editor that is super cool
 gem "wysiwyg-rails"
 
+# this Editor might be cooler
+gem 'ckeditor', '~> 4.1.3'
+
+
 gem "font-awesome-rails"
 # gem 'font-awesome-sass', '~> 4.7.0'
 
@@ -56,6 +60,7 @@ gem 'jquery-turbolinks'
 
 #Cool gem, displays the schema in the model files and specs -basically shows the model attributes
 gem 'annotate'
+
 
 # this is for ruby forms, however I think I will use Angularjs instead (this was braking shit so I commented it out for now)
 # gem 'simple_form'
