@@ -1,5 +1,6 @@
 @import "partials/globals";
 @import "styles/top_navigation";
+@import "styles/top_navigation_iphone";
 @import "styles/index";
 @import "styles/tabs";
 @import "styles/blog_show";
@@ -13,6 +14,11 @@ body {
     color: #404040;
     font-size: 1.8em;
     line-height: 1.5em;
+    position: relative;
+}
+
+.navigation-container-iphone {
+    display: none;
 }
 
 img {
@@ -22,6 +28,14 @@ img {
 img .default-img {
     height: 50% !important;
 }
+
+.round-div {
+}
+
+.portrait {
+    border-radius: 50%;
+}
+
 
 .main-blog-image {
     height: 100%;
@@ -42,11 +56,31 @@ h1 {
     font-family: $font-family-h1;
 }
 
+/* deperacated */
 h2, h3, h4 {
     color: $font-color-sub-titles;
     font-family: $font-family-h234;
     font-weight: 900;
 }
+
+.h-2, .h-3, .h-4, .h-5 {
+    color: $font-color-sub-titles;
+    font-family: $font-family-h234;
+    font-weight: 900;
+    display: inline-block;
+    margin-top: 10px;
+    line-height: 0.9em;
+}
+
+.h-2 {
+    font-size: 7vh;
+    margin-top: 40px;
+}
+
+.h-4 {
+    font-size: 5vh;
+}
+
 
 small {
     font-size: 65% !important;
@@ -82,3 +116,97 @@ hr.style2 {
     font-size: 1.5em;
 }
 
+/* Below is for small tablets */
+@media only screen and (max-device-width: 800px) {
+    body {
+        background-color: lightgreen;
+        font-size: 2.5em;
+    }
+
+    .navigation-container-iphone {
+        display: none;
+    }
+
+    .left-project, .right-project {
+        display: none;
+    }
+
+    .blog-header {
+        height: 35px;
+    }
+
+    .main-page-title {
+        font-size: 100%;
+        margin-top: 0;
+    }
+
+    .portrait {
+        width: 10vw;
+        text-align: center;
+
+    }
+
+    .portrait-container {
+        text-align: center;
+    }
+    /* .blog-title { */
+    /*     font-size: */
+    /* } */
+}
+
+/* Below is for small device */
+@media only screen and (max-device-width: 450px) {
+    body {
+        background-color: $primary-color;
+        font-size: 5em;
+    }
+
+    .column-order {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .column-order > .second-column { order: 2; }
+    .column-order > .main-blog { order: 1; }
+
+    .navigation-container {
+        display: none;
+    }
+
+    .navigation-container-iphone {
+        display: initial;
+    }
+
+    .h-2 {
+        font-size: 5vh;
+    }
+
+    .h-4 {
+        font-size: 3vh;
+    }
+
+    .blog-header {
+        display: none;
+    }
+
+    .sub-header-container {
+        display: none;
+    }
+
+    .column-one {
+        display: none;
+    }
+
+    .main-page-title {
+        font-size: 45px;
+        margin-top: 40px;
+    }
+
+    .sub-header {
+        height: 75px;
+    }
+
+    .portrait {
+        width: 20vw;
+    }
+}

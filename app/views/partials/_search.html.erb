@@ -1,17 +1,20 @@
-<% if current_page?(controller: 'posts', action: 'index') %>
-  <div class="sub-header">
-    <div class="col-md-12">
-      <span class="search-bar-text">A blog for the beginner</span>
-      <%= form_tag(posts_path, :method => "get", id: "search-form", class: "search-form pull-right") do %>
-        <div class="form-group">
-          <%= text_field_tag :search, params[:search], placeholder: "Search Posts", class: 'form-control', style: 'display: none' %>
+<div class="sub-header-container">
+    <% if current_page?(controller: 'posts', action: 'index') %>
+        <div class="sub-header">
+            <div class="col-md-12">
+                <span class="search-bar-text">A blog for the beginner</span>
+                <span class="search-bar-text pull-right"><%= @current_date %></span>
+                <%= form_tag(posts_path, :method => "get", id: "search-form", class: "search-form pull-right") do %>
+                    <div class="form-group">
+                        <%= text_field_tag :search, params[:search], placeholder: "Search Posts", class: 'form-control', style: 'display: none' %>
+                    </div>
+                    <%= submit_tag "Search", :name => nil, class: 'btn btn-primary', style: 'display: none' %>
+                <% end %>
+            </div>
         </div>
-        <%= submit_tag "Search", :name => nil, class: 'btn btn-primary', style: 'display: none' %>
-      <% end %>
-    </div>
-  </div>
-<% end %>
+    <% end %>
 
-<% if !current_page?(controller: 'posts', action: 'index') %>
-    <hr class="style2" />
-<% end %>
+    <% if !current_page?(controller: 'posts', action: 'index') %>
+        <hr class="style2" />
+    <% end %>
+</div>

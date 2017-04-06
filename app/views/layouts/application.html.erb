@@ -13,35 +13,36 @@
         <%= csrf_meta_tags %>
     </head>
     <body  ng-app="app">
+        <div class="navigation-container-iphone">
+            <%= render 'layouts/top_navigation_iphone' %>
+        </div>
         <div class="navigation-container">
             <div class="top-navigation">
                 <%= render 'layouts/top_navigation' %>
             </div>
         </div><!-- End of navigation-container -->
         <div class="blog-header">
-            <div class="">
-                <div class="col-md-2">
+                <div class="col-sm-2 col-md-2 left-project">
                     <a href="http://www.divegalaxsea.com/" target="_blank">
                         <%= image_tag 'diveGalaxsea.png', alt: 'Image of dive Galaxsea', class: 'project-image' %>
                     </a>
                     <br />
-                    <span id="popover" class="project-text" data-container="body" data-toggle="popover" data-placement="right" data-title="Latest Project:" data-content="Dive operation in Mexico" style="cursor:help">Project:</span>
+                    <span id="popover" class="project-text label label-default" data-container="body" data-toggle="popover" data-placement="right" data-title="Latest Project:" data-content="Dive operation in Mexico" style="cursor:help">Project:</span>
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-8 blog-title">
                     <%= @blog_title %>
                 </div>
                 <div class="col-md-8 <%= @css_sytle %>">
                     <%= @page_title %>
                 </div>
-                <div class="col-md-2 text-center">
+                <div class="col-md-2 text-center right-project">
                     <a href="https://yourresume.herokuapp.com/" target="_blank">
                         <%= image_tag 'yourResume.png', alt: 'Image of Your Resume', class: 'project-image' %>
                     </a>
                     <br />
-                    <span id="popover-two" class="project-text" data-container="body" data-toggle="popover" data-placement="left" data-title="Latest Project:" data-content="Build your resume" style="cursor:help">Project:</span>
+                    <span id="popover-two" class="project-text label label-default" data-container="body" data-toggle="popover" data-placement="left" data-title="Latest Project:" data-content="Build your resume" style="cursor:help">Project:</span>
                 </div>
 
-            </div>
         </div>
 
         <!-- TODO rename this file below it is a search and  line -->
@@ -49,7 +50,7 @@
 
         <section ng-controller="MainCtrl as main">
             <div class="content row">
-                <div class="col-md-12">
+                <div class="col-sm-12 col-md-12">
                     <%= yield %>
                 </div><!-- End of col-md-12 below section -->
             </div><!-- End of row below section -->
