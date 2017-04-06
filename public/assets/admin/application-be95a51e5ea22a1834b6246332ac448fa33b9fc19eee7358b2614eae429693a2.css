@@ -11129,7 +11129,7 @@ button.close {
   height: 25px;
   height: 100px;
   margin: 0px auto;
-  margin-top: 30px;
+  margin-top: 50px;
   text-align: center;
 }
 
@@ -11166,9 +11166,10 @@ button.close {
 .footer {
   font-family: "Times New Roman", Times, sans-serif;
   background-color: #FAFAFA;
-  height: 25px;
+  height: 75px;
   border-top: 1px solid #ccc;
   width: 100%;
+  padding: 20px;
   margin: 0 auto;
 }
 
