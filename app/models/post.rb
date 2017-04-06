@@ -28,7 +28,17 @@ class Post < ActiveRecord::Base
   has_attached_file :image, :default_url => "ohno.gif", :style => 'width: 100px'
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
+  before_validation { image.clear if @delete_image }
+
   def self.search(query)
     where("title like ? OR body like ?", "%#{query}%", "%#{query}%")
+  end
+
+  def delete_image
+    @delete_image ||= false
+  end
+
+  def delete_image=(value)
+    @delete_image = !value.to_i.zero?
   end
 end

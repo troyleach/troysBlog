@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
+
   root 'posts#index'
   # get 'contact' => 'contacts#new'
   # get 'contacts/create'

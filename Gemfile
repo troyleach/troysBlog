@@ -9,6 +9,8 @@ gem 'pg', '~> 0.15'
 gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '~> 3.3.6'
 
+gem 'compass-rails'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -34,6 +36,11 @@ gem 'will_paginate', '~> 3.1.0'
 # Editor that is super cool
 gem "wysiwyg-rails"
 
+# this Editor might be cooler
+gem 'ckeditor', '~> 4.1.3'
+gem 'carrierwave', '~> 1.0'
+gem "mini_magick"
+
 gem "font-awesome-rails"
 # gem 'font-awesome-sass', '~> 4.7.0'
 
@@ -56,6 +63,7 @@ gem 'jquery-turbolinks'
 
 #Cool gem, displays the schema in the model files and specs -basically shows the model attributes
 gem 'annotate'
+
 
 # this is for ruby forms, however I think I will use Angularjs instead (this was braking shit so I commented it out for now)
 # gem 'simple_form'
