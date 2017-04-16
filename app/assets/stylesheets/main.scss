@@ -17,6 +17,14 @@ body {
     position: relative;
 }
 
+.container {
+    min-width: 100%;
+}
+
+.hide-for-browser {
+    display: none;
+}
+
 .navigation-container-iphone {
     display: none;
 }
@@ -116,11 +124,80 @@ hr.style2 {
     font-size: 1.5em;
 }
 
-/* Below is for small tablets */
-@media only screen and (max-device-width: 800px) {
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+
+    .show-for-iphone {
+        display: inline-block;
+    }
+
+    .show-for-ipad {
+        display: none;
+    }
+
     body {
-        background-color: lightgreen;
-        font-size: 2.5em;
+        background-color: $primary-color;
+    }
+
+    .column-order {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .column-order > .second-column { order: 2; }
+    .column-order > .main-blog { order: 1; }
+
+    .navigation-container {
+        display: none;
+    }
+
+    .navigation-container-iphone {
+        display: initial;
+    }
+
+    .h-2 {
+        font-size: 5vh;
+    }
+
+    .h-4 {
+        font-size: 3vh;
+    }
+
+    .blog-header {
+        display: none;
+    }
+
+    .sub-header-container {
+        display: none;
+    }
+
+    .column-one {
+        display: none;
+    }
+
+    .main-page-title {
+        font-size: 45px;
+        margin-top: 40px;
+    }
+
+    .sub-header {
+        height: 75px;
+    }
+
+    .portrait {
+        width: 20vw;
+    }
+
+}
+
+/* Below is for small tablets (in landscape mode see iphones for portait) */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+    .hide-for-ipad {
+        display: none;
+    }
+
+    .show-for-ipad {
+        display: inline-block;
     }
 
     .navigation-container-iphone {
@@ -131,23 +208,47 @@ hr.style2 {
         display: none;
     }
 
+    body {
+        /* background-color: lightblue; */
+        font-size: 1.5em;
+    }
+
+    .contain{
+        margin-left: 40px;
+    }
+
+    .second-column {
+        border-left: none;
+    }
     .blog-header {
-        height: 35px;
+        height: 45px;
+        margin-top: 35px;
     }
 
     .main-page-title {
-        font-size: 100%;
+        text-align: center;
+        font-size: 150%;
+        margin: 0;
+        width: 100%;
+        padding-top: 10px;
+    }
+
+    .sub-header {
         margin-top: 0;
+        height: 25px;
     }
 
     .portrait {
         width: 10vw;
         text-align: center;
-
     }
 
     .portrait-container {
         text-align: center;
+    }
+
+    .search-bar-text {
+        font-size: .8em;
     }
     /* .blog-title { */
     /*     font-size: */
@@ -155,7 +256,15 @@ hr.style2 {
 }
 
 /* Below is for small device */
-@media only screen and (max-device-width: 450px) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    .show-for-iphone {
+        display: inline-block;
+    }
+
+    .show-for-ipad {
+        display: none;
+    }
+
     body {
         background-color: $primary-color;
     }

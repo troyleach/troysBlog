@@ -1,104 +1,79 @@
 <!-- TODO these need to be pulled out into partials -->
-<!-- Start of first  column -->
-<div class="design-border column-one col-md-1">
-    <div class="row">
-        <div class="col-md-12 portrait-container">
-            <%= image_tag 'me.jpg', :class => 'portrait' %>
-        </div>
-        <div class="category-links col-md-12">
-            <% @categories.each do |category| %>
-                <%= link_to category.name, category_path(category.id), class: 'feature-group-item' %>
-            <% end %>
-        </div>
-    </div>
+
+<div class="hide-for-ipad show-for-iphone">
 </div>
-
-<div class="column-order">
-    <!-- Start of second  columne -->
-    <div class="second-column col-md-2">
-        <div class="row">
-            <div class="col-md-12 post">
-                <% if @group_of_blogs[:group_one] %>
-                    <% @group_of_blogs[:group_one].each do |blog| %>
-                        <span class="h-4"><%= blog.title %></span>
-                        <p>
-                            <%= raw blog.body.truncate(200) %>
-                            <small><%= link_to "Read More", post_path(blog) %></small>
-                        </p>
-                        <small class="return">by: <%= blog.user.name %><br />
-                            <%= blog_date(blog.created_at) %>
-                        </small>
-                        <div class="comment-box">
-                            <div class="row">
-                                <div class="col-sm-7">
-                                    <span>Comments: <%= blog.comments.length %></span>
-                                </div>
-                                <div class="col-sm-5 pull-right">
-                                    <span class="pull-right likes">
-                                        <i class="fa fa-heart-o" aria-hidden="true"></i> 54
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <hr class="style1" />
+    <!-- TODO add breadcrumb for my tags see onenote/blog/design for the link -->
+    <div class="column-order">
+        <!-- Start of first  column -->
+        <div class="first-column design-border column-one col-md-1 hide-for-ipad">
+            <div class="row">
+                <div class="col-md-12 portrait-container">
+                    <%= image_tag 'me.jpg', :class => 'portrait' %>
+                </div>
+                <div class="category-links col-md-12">
+                    <% @categories.each do |category| %>
+                        <%= link_to category.name, category_path(category.id), class: 'feature-group-item' %>
                     <% end %>
-                <% end %>
+                </div>
             </div>
         </div>
-    </div>
-
-    <!-- Start of third column -->
-    <div class="main-blog col-md-5">
-        <div class="row">
-            <div class="col-md-12">
-                <% if @main_blog %>
-                    <div class="main-blog-title">
-                        <span><%= @main_blog.category.try(:name) %></span>
-                    </div>
-                    <div class="post">
-                        <%= image_tag @main_blog.image.url, :class => 'main-blog-image' %>
-                        <small class="pull-right">Credit for the pictrue</small>
-                        <span class="h-2"><%= @main_blog.title %></span>
-                        <p>
-                            <%= raw @main_blog.body.truncate(200) %>
-                            <small><%= link_to "Read More", post_path(@main_blog) %></small>
-                        </p>
-                        <!-- TODO fix this -->
-                        <small class="return">by: <%#= @main_blog.user.name %><br />
-                            <%= blog_date(@main_blog.created_at) %>
-                        </small>
-                        <div class="comment-box">
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <span>Comments: <%= @main_blog.comments.length %></span>
-                                </div>
-                                <div class="col-sm-6 pull-right">
-                                    <span class="pull-right likes">
-                                        <i class="fa fa-heart-o" aria-hidden="true"></i> 54
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <hr class="style1" />
-                    </div>
-                <% end %>
-            </div>
-            <% if @group_of_blogs[:group_two] %>
-                <% @group_of_blogs[:group_two].each do |blog| %>
-                    <div class="col-md-6">
-                        <div class="post">
+        <!-- Start of second  columne -->
+        <div class="second-column col-md-2 show-for-ipad">
+            <div class="row">
+                <div class="col-md-12 post">
+                    <% if @group_of_blogs[:group_one] %>
+                        <% @group_of_blogs[:group_one].each do |blog| %>
                             <span class="h-4"><%= blog.title %></span>
                             <p>
                                 <%= raw blog.body.truncate(200) %>
                                 <small><%= link_to "Read More", post_path(blog) %></small>
                             </p>
-                            <small class="return">by: <%= blog.user.name %><br/>
+                            <small class="return">by: <%= blog.user.name %><br />
                                 <%= blog_date(blog.created_at) %>
                             </small>
                             <div class="comment-box">
                                 <div class="row">
-                                    <div class="col-sm-6">
+                                    <div class="col-sm-7">
                                         <span>Comments: <%= blog.comments.length %></span>
+                                    </div>
+                                    <div class="col-sm-5 pull-right">
+                                        <span class="pull-right likes">
+                                            <i class="fa fa-heart-o" aria-hidden="true"></i> 54
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="style1" />
+                        <% end %>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+
+        <!-- Start of third column -->
+        <div class="main-blog col-md-5">
+            <div class="row">
+                <div class="col-md-12">
+                    <% if @main_blog %>
+                        <div class="main-blog-title">
+                            <span><%= @main_blog.category.try(:name) %></span>
+                        </div>
+                        <div class="post">
+                            <%= image_tag @main_blog.image.url, :class => 'main-blog-image' %>
+                            <small class="pull-right">Credit for the pictrue</small>
+                            <span class="h-2"><%= @main_blog.title %></span>
+                            <p>
+                                <%= raw @main_blog.body.truncate(200) %>
+                                <small><%= link_to "Read More", post_path(@main_blog) %></small>
+                            </p>
+                            <!-- TODO fix this -->
+                            <small class="return">by: <%#= @main_blog.user.name %><br />
+                                <%= blog_date(@main_blog.created_at) %>
+                            </small>
+                            <div class="comment-box">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <span>Comments: <%= @main_blog.comments.length %></span>
                                     </div>
                                     <div class="col-sm-6 pull-right">
                                         <span class="pull-right likes">
@@ -109,12 +84,40 @@
                             </div>
                             <hr class="style1" />
                         </div>
-                    </div>
+                    <% end %>
+                </div>
+                <% if @group_of_blogs[:group_two] %>
+                    <% @group_of_blogs[:group_two].each do |blog| %>
+                        <div class="col-md-6">
+                            <div class="post">
+                                <span class="h-4"><%= blog.title %></span>
+                                <p>
+                                    <%= raw blog.body.truncate(200) %>
+                                    <small><%= link_to "Read More", post_path(blog) %></small>
+                                </p>
+                                <small class="return">by: <%= blog.user.name %><br/>
+                                    <%= blog_date(blog.created_at) %>
+                                </small>
+                                <div class="comment-box">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <span>Comments: <%= blog.comments.length %></span>
+                                        </div>
+                                        <div class="col-sm-6 pull-right">
+                                            <span class="pull-right likes">
+                                                <i class="fa fa-heart-o" aria-hidden="true"></i> 54
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="style1" />
+                            </div>
+                        </div>
+                    <% end %>
                 <% end %>
-            <% end %>
+            </div>
         </div>
-    </div>
-</div><!-- End of Column order -->
+    </div><!-- End of Column order -->
 
 <!-- Start of far right column -->
 <div class="design-border col-md-4">
@@ -150,3 +153,4 @@
         </div>
     </div>
 </div>
+
