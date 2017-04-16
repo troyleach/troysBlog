@@ -9218,56 +9218,66 @@ body {
 }
 
 /* line 20, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
+.container {
+  min-width: 100%;
+}
+
+/* line 24, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
+.hide-for-browser {
+  display: none;
+}
+
+/* line 28, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
 .navigation-container-iphone {
   display: none;
 }
 
-/* line 24, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
+/* line 32, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
 img {
   width: 100%;
 }
 
-/* line 28, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
+/* line 36, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
 img .default-img {
   height: 50% !important;
 }
 
-/* line 35, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
+/* line 43, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
 .portrait {
   border-radius: 50%;
 }
 
-/* line 40, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
+/* line 48, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
 .main-blog-image {
   height: 100%;
 }
 
-/* line 44, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
+/* line 52, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
 .project-image {
   height: 75px;
   width: auto;
 }
 
-/* line 49, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
+/* line 57, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
 .project-text {
   font-size: 75%;
 }
 
-/* line 54, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
+/* line 62, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
 h1 {
   color: #5D5C5A;
   font-family: "Courier New", Courier, monospace;
 }
 
 /* deperacated */
-/* line 60, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
+/* line 68, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
 h2, h3, h4 {
   color: #86CCD6;
   font-family: "Times New Roman", Times, sans-serif;
   font-weight: 900;
 }
 
-/* line 66, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
+/* line 74, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
 .h-2, .h-3, .h-4, .h-5 {
   color: #86CCD6;
   font-family: "Times New Roman", Times, sans-serif;
@@ -9277,28 +9287,28 @@ h2, h3, h4 {
   line-height: 0.9em;
 }
 
-/* line 75, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
+/* line 83, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
 .h-2 {
   font-size: 7vh;
   margin-top: 40px;
 }
 
-/* line 80, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
+/* line 88, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
 .h-4 {
   font-size: 5vh;
 }
 
-/* line 85, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
+/* line 93, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
 small {
   font-size: 65% !important;
 }
 
-/* line 89, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
+/* line 97, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
 .comment img {
   width: 70%;
 }
 
-/* line 93, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
+/* line 101, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
 .category-title {
   font-family: "Gravitas One", cursive;
   color: #257712;
@@ -9309,77 +9319,42 @@ small {
   text-align: center;
 }
 
-/* line 103, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
+/* line 111, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
 hr.style1 {
   background-color: #fff;
   border-top: 1px dashed #8c8b8b;
 }
 
-/* line 108, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
+/* line 116, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
 hr.style2 {
   border-top: 6px double #8c8b8b;
   margin-top: 30px;
   margin-bottom: 0;
 }
 
-/* line 114, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
+/* line 122, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
 .star {
   color: red;
   font-size: 1.5em;
 }
 
-/* Below is for small tablets */
-@media only screen and (max-device-width: 800px) {
-  /* line 121, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
-  body {
-    background-color: lightgreen;
-    font-size: 2.5em;
-  }
-
-  /* line 126, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
-  .navigation-container-iphone {
-    display: none;
-  }
-
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
   /* line 130, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
-  .left-project, .right-project {
-    display: none;
+  .show-for-iphone {
+    display: inline-block;
   }
 
   /* line 134, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
-  .blog-header {
-    height: 35px;
+  .show-for-ipad {
+    display: none;
   }
 
   /* line 138, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
-  .main-page-title {
-    font-size: 100%;
-    margin-top: 0;
-  }
-
-  /* line 143, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
-  .portrait {
-    width: 10vw;
-    text-align: center;
-  }
-
-  /* line 149, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
-  .portrait-container {
-    text-align: center;
-  }
-
-  /* .blog-title { */
-  /*     font-size: */
-  /* } */
-}
-/* Below is for small device */
-@media only screen and (max-device-width: 450px) {
-  /* line 159, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
   body {
     background-color: #FAFAFA;
   }
 
-  /* line 163, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
+  /* line 142, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
   .column-order {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -9390,67 +9365,239 @@ hr.style2 {
             flex-direction: column;
   }
 
-  /* line 168, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
+  /* line 147, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
   .column-order > .second-column {
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
             order: 2;
   }
 
-  /* line 169, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
+  /* line 148, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
   .column-order > .main-blog {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
   }
 
-  /* line 171, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
+  /* line 150, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
   .navigation-container {
     display: none;
   }
 
-  /* line 175, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
+  /* line 154, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
   .navigation-container-iphone {
     display: initial;
   }
 
-  /* line 179, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
+  /* line 158, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
   .h-2 {
     font-size: 5vh;
   }
 
-  /* line 183, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
+  /* line 162, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
   .h-4 {
     font-size: 3vh;
   }
 
-  /* line 187, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
+  /* line 166, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
   .blog-header {
     display: none;
   }
 
-  /* line 191, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
+  /* line 170, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
   .sub-header-container {
     display: none;
   }
 
-  /* line 195, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
+  /* line 174, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
   .column-one {
     display: none;
   }
 
-  /* line 199, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
+  /* line 178, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
   .main-page-title {
     font-size: 45px;
     margin-top: 40px;
   }
 
-  /* line 204, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
+  /* line 183, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
   .sub-header {
     height: 75px;
   }
 
-  /* line 208, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
+  /* line 187, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
+  .portrait {
+    width: 20vw;
+  }
+}
+/* Below is for small tablets (in landscape mode see iphones for portait) */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  /* line 195, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
+  .hide-for-ipad {
+    display: none;
+  }
+
+  /* line 199, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
+  .show-for-ipad {
+    display: inline-block;
+  }
+
+  /* line 203, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
+  .navigation-container-iphone {
+    display: none;
+  }
+
+  /* line 207, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
+  .left-project, .right-project {
+    display: none;
+  }
+
+  /* line 211, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
+  body {
+    /* background-color: lightblue; */
+    font-size: 1.5em;
+  }
+
+  /* line 216, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
+  .contain {
+    margin-left: 40px;
+  }
+
+  /* line 220, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
+  .second-column {
+    border-left: none;
+  }
+
+  /* line 223, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
+  .blog-header {
+    height: 45px;
+    margin-top: 35px;
+  }
+
+  /* line 228, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
+  .main-page-title {
+    text-align: center;
+    font-size: 150%;
+    margin: 0;
+    width: 100%;
+    padding-top: 10px;
+  }
+
+  /* line 236, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
+  .sub-header {
+    margin-top: 0;
+    height: 25px;
+  }
+
+  /* line 241, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
+  .portrait {
+    width: 10vw;
+    text-align: center;
+  }
+
+  /* line 246, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
+  .portrait-container {
+    text-align: center;
+  }
+
+  /* line 250, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
+  .search-bar-text {
+    font-size: .8em;
+  }
+
+  /* .blog-title { */
+  /*     font-size: */
+  /* } */
+}
+/* Below is for small device */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  /* line 260, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
+  .show-for-iphone {
+    display: inline-block;
+  }
+
+  /* line 264, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
+  .show-for-ipad {
+    display: none;
+  }
+
+  /* line 268, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
+  body {
+    background-color: #FAFAFA;
+  }
+
+  /* line 272, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
+  .column-order {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  /* line 277, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
+  .column-order > .second-column {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+
+  /* line 278, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
+  .column-order > .main-blog {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+
+  /* line 280, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
+  .navigation-container {
+    display: none;
+  }
+
+  /* line 284, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
+  .navigation-container-iphone {
+    display: initial;
+  }
+
+  /* line 288, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
+  .h-2 {
+    font-size: 5vh;
+  }
+
+  /* line 292, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
+  .h-4 {
+    font-size: 3vh;
+  }
+
+  /* line 296, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
+  .blog-header {
+    display: none;
+  }
+
+  /* line 300, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
+  .sub-header-container {
+    display: none;
+  }
+
+  /* line 304, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
+  .column-one {
+    display: none;
+  }
+
+  /* line 308, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
+  .main-page-title {
+    font-size: 45px;
+    margin-top: 40px;
+  }
+
+  /* line 313, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
+  .sub-header {
+    height: 75px;
+  }
+
+  /* line 317, /Users/troyleach/projects/2016/troysBlog/app/assets/stylesheets/main.scss */
   .portrait {
     width: 20vw;
   }
