@@ -11,68 +11,100 @@
         <!-- <script src="/app/assets/javascripts/bootstrap.min.js"></script> -->
         <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
         <%= csrf_meta_tags %>
+
+        <!-- TODO below has to do with the menu -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet'>
     </head>
     <body  ng-app="app">
-        <div class="navigation-container">
-            <div class="top-navigation">
-                <%= render 'layouts/top_navigation' %>
-            </div>
-        </div><!-- End of navigation-container -->
-        <div class="blog-header">
-            <div class="">
-                <div class="col-md-2">
-                    <a href="http://www.divegalaxsea.com/" target="_blank">
-                        <%= image_tag 'diveGalaxsea.png', alt: 'Image of dive Galaxsea', class: 'project-image' %>
-                    </a>
-                    <br />
-                    <span id="popover" class="project-text" data-container="body" data-toggle="popover" data-placement="right" data-title="Latest Project:" data-content="Dive operation in Mexico" style="cursor:help">Project:</span>
+        <div class="site-container"><!-- this wrapped the hole site including header - this is for the cool menu -->
+            <div class="site-pusher">
+
+
+                <div class="navigation-container-iphone">
+                    <%= render 'layouts/top_navigation_iphone' %>
                 </div>
-                <div class="col-md-8">
-                    <%= @blog_title %>
+                <!-- NOTE the navigation container is display none when on a small device like cells phones -->
+                <div class="navigation-container">
+                    <div class="top-navigation">
+                        <%= render 'layouts/top_navigation' %>
+                    </div>
+                </div><!-- End of navigation-container -->
+                <div class="blog-header">
+                    <div class="col-sm-2 col-md-2 left-project">
+                        <a href="http://www.divegalaxsea.com/" target="_blank">
+                            <%= image_tag 'diveGalaxsea.png', alt: 'Image of dive Galaxsea', class: 'project-image' %>
+                        </a>
+                        <br />
+                    </div>
+                    <div class="col-md-8 blog-title">
+                        <% if current_page?(controller: 'posts', action: 'index') %>
+                            <%= @blog_title %>
+                        <% end %>
+                    </div>
+                    <div class="col-md-8 <%= @css_sytle %>">
+                        <%= @page_title %>
+                    </div>
+                    <div class="col-md-2 text-center right-project">
+                        <a href="https://yourresume.herokuapp.com/" target="_blank">
+                            <%= image_tag 'yourResume.png', alt: 'Image of Your Resume', class: 'project-image' %>
+                        </a>
+                        <br />
+                    </div>
+
                 </div>
-                <div class="col-md-8 <%= @css_sytle %>">
-                    <%= @page_title %>
-                </div>
-                <div class="col-md-2 text-center">
-                    <a href="https://yourresume.herokuapp.com/" target="_blank">
-                        <%= image_tag 'yourResume.png', alt: 'Image of Your Resume', class: 'project-image' %>
-                    </a>
-                    <br />
-                    <span id="popover-two" class="project-text" data-container="body" data-toggle="popover" data-placement="left" data-title="Latest Project:" data-content="Build your resume" style="cursor:help">Project:</span>
-                </div>
 
-            </div>
-        </div>
+                <!-- TODO rename this file below it is a search and  line -->
+                <%= render 'partials/search' %>
+                <!-- NOTE END the navigation container is display: none when on a small device like cells phones -->
 
-        <!-- TODO rename this file below it is a search and  line -->
-        <%= render 'partials/search' %>
+                <div class="site-content"><!-- this wrapped just the content below the header for the cool menu -->
+                    <div class="container">
+                        <section ng-controller="MainCtrl as main">
+                            <div class="content row">
+                                <div class="col-sm-12 col-md-12">
+                                    <%= yield %>
+                                </div><!-- End of col-md-12 below section -->
+                            </div><!-- End of row below section -->
+                        </section>
 
-        <section ng-controller="MainCtrl as main">
-            <div class="content row">
-                <div class="col-md-12">
-                    <%= yield %>
-                </div><!-- End of col-md-12 below section -->
-            </div><!-- End of row below section -->
-        </section>
+                        <footer>
+                            <div class="footer-container">
+                                <div class="footer">
+                                    <small>This is the footer | <%= link_to "Admin Login", admin_posts_path, target: '_blank' %>
+                                </div>
+                            </div>
+                        </footer>
 
-        <footer>
-            <div class="footer-container">
-                <div class="footer">
-                    <small>This is the footer | <%= link_to "Admin Login", admin_posts_path, target: '_blank' %>
-                </div>
-            </div>
-        </footer>
+                    </div> <!-- END container -->
+                </div> <!-- END site-content -->
 
-        <script>
-         $(document).ready(function(){
-             setTimeout(function(){
-                 $('#flash').remove();
-             }, 5000);
-         })
+                <script>
+                 $(document).ready(function(){
+                     setTimeout(function(){
+                         $('#flash').remove();
+                     }, 5000);
+                 })
 
-         $("#popover").popover({ trigger: "hover" });
-         $("#popover-two").popover({ trigger: "hover" });
-        </script>
+                 $("#popover").popover({ trigger: "hover" });
+                 $("#popover-two").popover({ trigger: "hover" });
+                </script>
 
+                <!-- TODO don't think I need this??? -->
+                <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+                <div class="site-cache" id="site-cache"></div>
+            </div> <!-- END site-pusher -->
+        </div> <!-- END site-container -->
+
+<script type="text/javascript">
+$(document).ready(function(){
+  setTimeout(function(){
+    $('#flash').remove();
+  }, 5000);
+ })
+</script>
     </body>
 </html>
+

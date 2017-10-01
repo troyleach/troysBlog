@@ -11,12 +11,12 @@
     border-left: 1px solid #ccc;
     border-right: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
-    height: 200px;
 }
 
 .quote-image {
   height: 100%;
   width: 100%;
+  padding: 10px;
 }
 
 .polaroid {
@@ -27,7 +27,7 @@
 
 .quote-container {
     background-color: #fff;
-    padding-top: 20px;
+    padding: 20px;
 }
     
 .sports-container {
