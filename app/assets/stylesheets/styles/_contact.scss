@@ -1,0 +1,29 @@
+$base: #03A9F4;
+$text: #555;
+$invalid: #E91E63;
+
+.contact-container {
+    margin: 50px auto !important;
+    border: 1px solid #000;
+    background: $light-grey;
+    width: 40vw;
+    padding: 10px;
+}
+
+.contact-title {
+    font-size: 2em;
+    color: $primary-color;
+    text-align: justify;
+}
+
+//.contact-message {
+    //margin-top: 25px;
+    //padding-left: 30px;
+    //padding-right: 30px
+//}
+
+textarea.contact-message-box {
+    width: 100%;
+    height: 20vw;
+}
+

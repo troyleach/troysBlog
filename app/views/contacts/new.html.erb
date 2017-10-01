@@ -1,18 +1,28 @@
-<div align="center">
-  <h3>Send A message to Us</h3>
-  <div class="container">
-    <%= form_for @contact, :html => {:class => 'form-horizontal' } do |f| %>
-        <%#= form.label :body, 'Announcement' %>
-        <%= f.text_field :name, placeholder: 'Name', :required => true %>
-        <%= f.text_field :email, placeholder: 'Email', :required => true %><br />
-        <%= f.text_area :message, placeholder: 'Type a few words...', :as => :text, :required => true %>
-        <div class= "hidden">
-        <%= f.text_field :nickname, :hint => 'Leave this field blank!' %>
+<div class="contact-container">
+    <p class="contact-title">
+        Contact Me
+    </p>
+
+    <div class="row">
+        <div class="col-md-12">
+            <%= simple_form_for @contact, :html => {:class => 'form-horizontal' } do |f| %>
+                <div class="col-sm-8">
+                    <%= f.input :name, :required => true %>
+                </div>
+                <div class="col-sm-8">
+                    <%= f.input :email, :required => true %>
+                </div>
+                <div class="col-sm-12">
+                    <%= f.input :message, :as => :text, :required => true, input_html: {:class=> "contact-message-box"} %>
+                </div>
+                <div class= "hidden">
+                    <%= f.input :nickname, :hint => 'Leave this field blank!' %>
+                </div>
+                <div class="col-sm-12">
+                    </br>
+                    <%= f.button :submit, 'Send message', :class=> "btn btn-primary  pull-right" %>
+                </div>
+            <% end %>
         </div>
-        <div>
-        </br>
-        <%= f.submit 'Send Message', class: 'btn btn-primary pull-right' %>
-        </div>
-    <% end %>
-  </div>
+    </div>
 </div>

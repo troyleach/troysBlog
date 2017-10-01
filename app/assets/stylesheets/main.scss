@@ -6,6 +6,7 @@
 @import "styles/blog_show";
 @import "styles/category";
 @import "styles/search";
+@import "styles/contact";
 
 body {
     background-color: $primary-color;
@@ -27,6 +28,14 @@ body {
 
 .navigation-container-iphone {
     display: none;
+}
+
+.top-navigation {
+  text-align: center;
+}
+
+.required {
+    color: red;
 }
 
 img {
@@ -126,6 +135,11 @@ hr.style2 {
     font-size: 1.5em;
 }
 
+.flash-message {
+  //background-color: #dff0d8;
+  font-size: 75%;
+  padding: 5px;
+}
 
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
 

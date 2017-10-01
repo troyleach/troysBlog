@@ -38,7 +38,9 @@
                         <br />
                     </div>
                     <div class="col-md-8 blog-title">
-                        <%= @blog_title %>
+                        <% if current_page?(controller: 'posts', action: 'index') %>
+                            <%= @blog_title %>
+                        <% end %>
                     </div>
                     <div class="col-md-8 <%= @css_sytle %>">
                         <%= @page_title %>
@@ -95,5 +97,14 @@
                 <div class="site-cache" id="site-cache"></div>
             </div> <!-- END site-pusher -->
         </div> <!-- END site-container -->
+
+<script type="text/javascript">
+$(document).ready(function(){
+  setTimeout(function(){
+    $('#flash').remove();
+  }, 5000);
+ })
+</script>
     </body>
 </html>
+

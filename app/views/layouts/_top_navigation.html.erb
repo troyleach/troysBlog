@@ -5,10 +5,17 @@
         <li><%= link_to 'Contact |', new_contact_path %></li>
         <!-- <li><a href="/contact.html">Contact |</a></li> -->
         <li><a href="http://www.troyleach.com" target="_blank">troyleach.com</a></li>
+
     </ul> 
+    <% flash.each do |key, value| %>
+        <span id='flash' class="flash-message alert alert-<%= key %>">
+            <%= value %>
+        </span>
+    <% end %>
     <ul class="navigation navigation-bar pull-right">
         <li class="active"><a href="https://www.github.com/troyleach" target="_blank">github |</a></li>
         <li><a href="https://plus.google.com/u/0/100235641551070410533" target="_blank">Google+ |</a></li>
         <li><a href="https://www.linkedin.com/in/troy-leach-67280ba" target="_blank">linkin</a></li>
     </ul> 
 </div>
+

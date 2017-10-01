@@ -1,4 +1,4 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -66,7 +66,10 @@ gem 'annotate'
 
 
 # this is for ruby forms, however I think I will use Angularjs instead (this was braking shit so I commented it out for now)
-# gem 'simple_form'
+gem 'simple_form'
+
+# env variables
+gem 'figaro'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
